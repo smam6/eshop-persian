@@ -1,9 +1,11 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Catalog.API.Resources;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Localization;
 using Pgvector.EntityFrameworkCore;
 
 namespace eShop.Catalog.API;
@@ -359,29 +361,31 @@ public static class CatalogApi
     public static async Task<Results<Created, BadRequest<ProblemDetails>, NotFound<ProblemDetails>>> UpdateItemV1(
         HttpContext httpContext,
         [AsParameters] CatalogServices services,
-        CatalogItem productToUpdate)
+        CatalogItem productToUpdate,
+        IStringLocalizer<CatalogApiResources> localizer)
     {
         if (productToUpdate?.Id == null)
         {
             return TypedResults.BadRequest<ProblemDetails>(new (){
-                Detail = "Item id must be provided in the request body."
+                Detail = localizer[nameof(CatalogApiResources.ItemIdRequired)]
             });
         }
-        return await UpdateItem(httpContext, productToUpdate.Id, services, productToUpdate);
+        return await UpdateItem(httpContext, productToUpdate.Id, services, productToUpdate, localizer);
     }
 
     public static async Task<Results<Created, BadRequest<ProblemDetails>, NotFound<ProblemDetails>>> UpdateItem(
         HttpContext httpContext,
         [Description("The id of the catalog item to delete")] int id,
         [AsParameters] CatalogServices services,
-        CatalogItem productToUpdate)
+        CatalogItem productToUpdate,
+        IStringLocalizer<CatalogApiResources> localizer)
     {
         var catalogItem = await services.Context.CatalogItems.SingleOrDefaultAsync(i => i.Id == id);
 
         if (catalogItem == null)
         {
             return TypedResults.NotFound<ProblemDetails>(new (){
-                Detail = $"Item with id {id} not found."
+                Detail = localizer["ItemNotFound", id]
             });
         }
 

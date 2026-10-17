@@ -1,15 +1,21 @@
-﻿using eShop.WebApp.Components;
+using eShop.WebApp.Components;
 using eShop.ServiceDefaults;
+using eShop.WebApp.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+
+// محلی‌سازی فارسی - فرهنگ پیش‌فرض fa-IR با تقویم شمسی و واحد تومان
+builder.AddPersianLocalization();
 
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
 builder.AddApplicationServices();
 
 var app = builder.Build();
+
+app.UsePersianLocalization();
 
 app.MapDefaultEndpoints();
 

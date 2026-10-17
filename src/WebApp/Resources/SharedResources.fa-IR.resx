@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppName" xml:space="preserve"><value>فروشگاه آنلاین AdventureWorks</value></data>
+  <data name="Home" xml:space="preserve"><value>خانه</value></data>
+  <data name="ShopAll" xml:space="preserve"><value>نمایش همهٔ محصولات</value></data>
+  <data name="ShoppingBag" xml:space="preserve"><value>سبد خرید</value></data>
+  <data name="Checkout" xml:space="preserve"><value>تسویه حساب</value></data>
+  <data name="MyOrders" xml:space="preserve"><value>سفارش‌های من</value></data>
+  <data name="Login" xml:space="preserve"><value>ورود</value></data>
+  <data name="Logout" xml:space="preserve"><value>خروج</value></data>
+  <data name="Search" xml:space="preserve"><value>جستجو</value></data>
+  <data name="Filter" xml:space="preserve"><value>پالایش</value></data>
+  <data name="Sort" xml:space="preserve"><value>مرتب‌سازی</value></data>
+  <data name="Price" xml:space="preserve"><value>قیمت</value></data>
+  <data name="Total" xml:space="preserve"><value>جمع کل</value></data>
+  <data name="Quantity" xml:space="preserve"><value>تعداد</value></data>
+  <data name="Products" xml:space="preserve"><value>محصولات</value></data>
+  <data name="ContinueShopping" xml:space="preserve"><value>ادامهٔ خرید</value></data>
+  <data name="AddToCart" xml:space="preserve"><value>افزودن به سبد خرید</value></data>
+  <data name="Remove" xml:space="preserve"><value>حذف</value></data>
+  <data name="InCart" xml:space="preserve"><value>در سبد شما</value></data>
+  <data name="EmptyCart" xml:space="preserve"><value>سبد خرید شما خالی است</value></data>
+  <data name="StartShopping" xml:space="preserve"><value>شروع خرید</value></data>
+  <data name="CatalogTitle" xml:space="preserve"><value>آمادهٔ یک ماجراجویی جدید هستید؟</value></data>
+  <data name="CatalogSubtitle" xml:space="preserve"><value>فصل را با جدیدترین پوشاک و تجهیزات آغاز کنید.</value></data>
+  <data name="NoProducts" xml:space="preserve"><value>محصولی با این فیلترها یافت نشد</value></data>
+  <data name="NoProductsHint" xml:space="preserve"><value>فیلتری را حذف کنید یا جستجو را از نو آغاز نمایید.</value></data>
+  <data name="ClearFilters" xml:space="preserve"><value>پاک‌کردن همهٔ فیلترها</value></data>
+  <data name="ProductsCount" xml:space="preserve"><value>محصول</value></data>
+  <data name="SortNameAsc" xml:space="preserve"><value>نام: الف تا ی</value></data>
+  <data name="SortNameDesc" xml:space="preserve"><value>نام: ی تا الف</value></data>
+  <data name="SortPriceAsc" xml:space="preserve"><value>قیمت: کم به زیاد</value></data>
+  <data name="SortPriceDesc" xml:space="preserve"><value>قیمت: زیاد به کم</value></data>
+  <data name="Cart_Products" xml:space="preserve"><value>محصولات</value></data>
+  <data name="Cart_Quantity" xml:space="preserve"><value>تعداد</value></data>
+  <data name="Cart_Total" xml:space="preserve"><value>مجموع</value></data>
+  <data name="Cart_TotalLabel" xml:space="preserve"><value>مجموع سبد</value></data>
+  <data name="Cart_Continue" xml:space="preserve"><value>ادامهٔ خرید</value></data>
+  <data name="Cart_Checkout" xml:space="preserve"><value>تسویه حساب</value></data>
+  <data name="Cart_EmptyTitle" xml:space="preserve"><value>سبد خرید شما خالی است</value></data>
+  <data name="Cart_EmptyHint" xml:space="preserve"><value>کاتالوگ را مرور کنید و تجهیزات مورد علاقه‌تان را به سبد بیفزایید.</value></data>
+  <data name="Checkout_ShippingAddress" xml:space="preserve"><value>نشانی ارسال</value></data>
+  <data name="Checkout_Address" xml:space="preserve"><value>نشانی</value></data>
+  <data name="Checkout_City" xml:space="preserve"><value>شهر</value></data>
+  <data name="Checkout_State" xml:space="preserve"><value>استان</value></data>
+  <data name="Checkout_ZipCode" xml:space="preserve"><value>کد پستی</value></data>
+  <data name="Checkout_Country" xml:space="preserve"><value>کشور</value></data>
+  <data name="Checkout_BackToBag" xml:space="preserve"><value>بازگشت به سبد خرید</value></data>
+  <data name="Checkout_PlaceOrder" xml:space="preserve"><value>ثبت سفارش</value></data>
+  <data name="Checkout_Required" xml:space="preserve"><value>این فیلد الزامی است</value></data>
+  <data name="Item_Brand" xml:space="preserve"><value>برند</value></data>
+  <data name="Item_BackToCatalog" xml:space="preserve"><value>بازگشت به کاتالوگ</value></data>
+  <data name="Item_NotFound" xml:space="preserve"><value>متأسفانه چنین محصولی یافت نشد.</value></data>
+  <data name="Item_LoginToPurchase" xml:space="preserve"><value>برای خرید وارد شوید</value></data>
+  <data name="Orders_Title" xml:space="preserve"><value>سفارش‌ها</value></data>
+  <data name="Orders_Number" xml:space="preserve"><value>شماره</value></data>
+  <data name="Orders_Date" xml:space="preserve"><value>تاریخ</value></data>
+  <data name="Orders_Status" xml:space="preserve"><value>وضعیت</value></data>
+  <data name="Orders_NoOrders" xml:space="preserve"><value>هنوز سفارشی ثبت نکرده‌اید</value></data>
+  <data name="Orders_NoOrdersHint" xml:space="preserve"><value>هنگامی که سفارشی ثبت کنید، در اینجا با وضعیت و مبلغ آن نمایش داده می‌شود.</value></data>
+  <data name="Footer_Tagline" xml:space="preserve"><value>تجهیزاتی برای ماجراجویی بعدی شما، هرجا که باشد.</value></data>
+  <data name="Footer_Shop" xml:space="preserve"><value>فروشگاه</value></data>
+  <data name="Footer_Support" xml:space="preserve"><value>پشتیبانی</value></data>
+  <data name="Footer_Company" xml:space="preserve"><value>شرکت</value></data>
+  <data name="Footer_Rights" xml:space="preserve"><value>کلیهٔ حقوق محفوظ است.</value></data>
+  <data name="Chatbot_Title" xml:space="preserve"><value>دستیار خرید</value></data>
+  <data name="Chatbot_Placeholder" xml:space="preserve"><value>دربارهٔ محصولات، سفارش‌ها یا پیشنهادها بپرسید...</value></data>
+  <data name="Chatbot_Thinking" xml:space="preserve"><value>در حال فکر کردن...</value></data>
+  <data name="Chatbot_NotEnabled" xml:space="preserve"><value>دستیار فعال نیست</value></data>
+  <data name="Chatbot_NotEnabledHint" xml:space="preserve"><value>برای فعال‌سازی، Microsoft Foundry یا Ollama را روشن کنید.</value></data>
+  <data name="OrderStatus_Submitted" xml:space="preserve"><value>ثبت‌شده</value></data>
+  <data name="OrderStatus_AwaitingValidation" xml:space="preserve"><value>در انتظار تأیید</value></data>
+  <data name="OrderStatus_StockConfirmed" xml:space="preserve"><value>موجودی تأیید شد</value></data>
+  <data name="OrderStatus_Paid" xml:space="preserve"><value>پرداخت‌شده</value></data>
+  <data name="OrderStatus_Shipped" xml:space="preserve"><value>ارسال‌شده</value></data>
+  <data name="OrderStatus_Cancelled" xml:space="preserve"><value>لغو شد</value></data>
+</root>
