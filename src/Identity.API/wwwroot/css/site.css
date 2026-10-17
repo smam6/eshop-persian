@@ -173,7 +173,7 @@ body {
     overflow: hidden;
     position: absolute;
     max-width: 100%;
-    left: 0;
+    inset-inline-start: 0;
     top: 0;
 }
 
@@ -209,7 +209,7 @@ body {
 
 .eshop-header .logo-header {
     color: #141414;
-    margin-right: auto;
+    margin-inline-end: auto;
 }
 
 .eshop-header-navbar {
@@ -242,7 +242,7 @@ body {
 
 .eshop-footer .logo-footer {
     color: white;
-    margin-right: auto;
+    margin-inline-end: auto;
 }
 
 .login-container {
@@ -374,6 +374,14 @@ body {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     opacity: 0.92;
+}
+
+/* در متن فارسی، فاصلهٔ حرفی و uppercase حذف می‌شوند تا حروف به هم بپیوندند */
+html[dir="rtl"] .login-visual-kicker,
+html[dir="rtl"] .login-visual-line {
+    letter-spacing: normal;
+    text-transform: none;
+    line-height: 1.6;
 }
 
 .login-visual-line {

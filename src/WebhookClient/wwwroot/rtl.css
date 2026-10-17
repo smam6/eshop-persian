@@ -1,0 +1,70 @@
+/* ==========================================================================
+   rtl.css — راست‌به‌چپ و فونت فارسی برای کلاینت WebhookClient
+   (این کلاینت فونت پیش‌فرض Arial دارد؛ Vazirmatn به‌عنوان fallback فارسی
+   اضافه می‌شود و قواعد جهت‌دار به ویژگی‌های منطقی تبدیل شده‌اند.)
+   ========================================================================== */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/vazirmatn/Vazirmatn-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 600;
+    src: url('fonts/vazirmatn/Vazirmatn-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/vazirmatn/Vazirmatn-Bold.woff2') format('woff2');
+}
+
+html[dir="rtl"] body {
+    font-family: 'Vazirmatn', Arial, Helvetica, sans-serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+}
+
+html[dir="rtl"] :is(h1, h2, h3, h4, p, a, li, label, button, td, th) {
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+html[dir="rtl"] :is(input, textarea, select) {
+    text-align: start;
+}
+
+/* آدرس وب‌هوک و URLها باید چپ‌به‌راست تایپ/نمایش داده شوند */
+html[dir="rtl"] :is(input[type="url"], input[type="text"], code) {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: embed;
+}
+
+html[dir="rtl"] table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+html[dir="rtl"] table :is(th, td) {
+    text-align: start;
+}
+
+html[dir="rtl"] .user-info {
+    margin-left: 0;
+    margin-inline-start: auto;
+}
+
+html[dir="rtl"] h1 a {
+    text-decoration: none;
+}

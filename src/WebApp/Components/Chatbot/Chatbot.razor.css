@@ -160,17 +160,17 @@
 }
 
 .chatbot-chat .message-assistant {
-    margin-right: auto;
+    margin-inline-end: auto;
     background: var(--color-surface);
     border: 1px solid var(--color-line);
-    border-bottom-left-radius: var(--radius-sm);
+    border-end-start-radius: var(--radius-sm);
     color: var(--color-ink-2);
 }
 
 .chatbot-chat .message-user {
-    margin-left: auto;
+    margin-inline-start: auto;
     background: var(--color-ink);
-    border-bottom-right-radius: var(--radius-sm);
+    border-end-end-radius: var(--radius-sm);
     color: #fff;
 }
 
@@ -239,7 +239,7 @@
 
 .thinking {
     margin: 0;
-    padding-left: 0.35rem;
+    padding-inline-start: 0.35rem;
     color: var(--color-muted);
     font-size: var(--text-sm);
     font-style: italic;

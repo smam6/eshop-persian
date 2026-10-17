@@ -1,0 +1,186 @@
+/* ==========================================================================
+   rtl.css — لایهٔ راست‌به‌چپ (RTL) و تایپوگرافی فارسی
+   --------------------------------------------------------------------------
+   ترتیب بارگذاری (در App.razor): normalize.css ← app.css ← WebApp.styles.css
+   ← rtl.css. چون استایل‌های scoped کامپوننت‌ها با انتخابگر [b-…] می‌آیند،
+   بازنویسی‌های این فایل با پیشوند html[dir="rtl"] نوشته شده‌اند تا ویژگی
+   (specificity) بالاتری داشته باشند.
+
+   نکتهٔ معماری: خودِ فایل‌های *.razor.css به «ویژگی‌های منطقی»
+   (margin-inline-start، inset-inline-end، text-align: start …) تبدیل شده‌اند؛
+   بنابراین چیدمان به‌طور خودکار قرینه می‌شود و این فایل فقط موارد زیر را
+   بر عهده دارد: فونت فارسی، اصلاح تایپوگرافی، ورودی‌های فرم، اعداد و
+   قرینه‌سازی آیکون‌های جهت‌دار.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ۱) فونت فارسی Vazirmatn (SIL OFL 1.1) — وزن‌های مورداستفاده در رابط
+   -------------------------------------------------------------------------- */
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/vazirmatn/Vazirmatn-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/vazirmatn/Vazirmatn-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/vazirmatn/Vazirmatn-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/vazirmatn/Vazirmatn-Bold.woff2') format('woff2');
+}
+
+/* --------------------------------------------------------------------------
+   ۲) پایهٔ چیدمان و تایپوگرافی فارسی
+   -------------------------------------------------------------------------- */
+:root {
+    /* فونت لاتینِ برند اول می‌آید و Vazirmatn به‌عنوان fallback برای گلیف‌های
+       فارسی استفاده می‌شود؛ به این ترتیب متن دوزبانه یکدست می‌ماند. */
+    --font-family-fa: 'Plus Jakarta Sans', 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    --fa-line-height: 1.8;
+}
+
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="rtl"] body {
+    font-family: var(--font-family-fa);
+    text-align: right;
+    /* متن فارسی به خط بلندتر و بدون فاصلهٔ حرفی نیاز دارد */
+    line-height: var(--fa-line-height);
+    letter-spacing: normal;
+}
+
+/* letter-spacing حروف فارسی را از هم می‌کند و uppercase برای خط فارسی بی‌معناست؛
+   پس برای همهٔ عناصر متنی بازنشانی می‌شوند (طرح اصلی این دو را برای برچسب‌های
+   لاتین استفاده می‌کرد). */
+html[dir="rtl"] :is(h1, h2, h3, h4, h5, h6, p, a, li, span, label, button, summary, td, th, dt, dd, blockquote) {
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* تیترها در فارسی کمی فاصلهٔ خطِ بیشتر می‌خواهند */
+html[dir="rtl"] :is(h1, h2, h3) {
+    line-height: 1.55;
+}
+
+/* شکسته‌شدن کلمات فارسی در ستون‌های باریک (نام محصولات) */
+html[dir="rtl"] :is(.eshop-main, .cart, .catalog, .item, .checkout) {
+    overflow-wrap: anywhere;
+    hyphens: none;
+}
+
+/* --------------------------------------------------------------------------
+   ۳) بازنشانی تایپوگرافیِ کلاس‌های طرح اصلی
+   --------------------------------------------------------------------------
+   استایل‌های scoped کامپوننت با انتخابگر [b-…] می‌آیند و specificity آن‌ها
+   (۰,۲,۱) از `html[dir=rtl] h1` (۰,۱,۲) بیشتر است؛ پس برای همین کلاس‌ها
+   باید مسیرِ کاملِ انتخابگر تکرار شود تا بازنشانی برنده شود.
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .eshop-hero-intro h1,
+html[dir="rtl"] .eshop-footer-col h2,
+html[dir="rtl"] .catalog-search-group h3,
+html[dir="rtl"] .catalog-product-brand,
+html[dir="rtl"] .cart-items .cart-item-header,
+html[dir="rtl"] .orders-header,
+html[dir="rtl"] .cart-empty h2,
+html[dir="rtl"] .orders-empty h2,
+html[dir="rtl"] .price {
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* برچسب‌های لاتینِ سرستون جدول (محصولات/تعداد/مجموع) در فارسی کمی بزرگ‌تر می‌شوند */
+html[dir="rtl"] .cart-items .cart-item-header,
+html[dir="rtl"] .orders-header {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+/* چیپ برند محصول در کارت کاتالوگ */
+html[dir="rtl"] .catalog-product-brand {
+    padding-inline: .55rem;
+    font-size: .72rem;
+}
+
+/* --------------------------------------------------------------------------
+   ۴) اعداد، قیمت‌ها و تاریخ‌ها
+   -------------------------------------------------------------------------- */
+/* ارقام هم‌عرض (tabular) تا ستون قیمت/مبلغ در جدول و کارت‌ها نلغزد. */
+html[dir="rtl"] :is(.price, .money, .cart-summary-total, .order-total, .order-date, .order-number, td, th) {
+    font-variant-numeric: tabular-nums;
+}
+
+/* «۱٬۲۹۰٬۰۰۰ تومان» نباید در میان متن راست‌به‌چپ بشکند؛
+   با isolate، دنبالهٔ عدد+واحد پول یک واحد بی‌جهت در نظر گرفته می‌شود. */
+html[dir="rtl"] :is(.price, .money) {
+    white-space: nowrap;
+    unicode-bidi: isolate;
+}
+
+/* کدها/شماره‌های فنی (GUID، شمارهٔ سفارش) در متن فارسی چپ‌به‌راست می‌مانند */
+html[dir="rtl"] :is(code, kbd, samp, .order-number) {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+/* --------------------------------------------------------------------------
+   ۵) فرم‌ها
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] :is(input, textarea, select) {
+    text-align: start;
+}
+
+/* ورودی‌هایی که ذاتاً محتوای لاتین دارند، چپ‌به‌راست تایپ می‌شوند تا
+   مکان‌نما و مرتب‌شدن پرانتز/خط تیره درست بماند. */
+html[dir="rtl"] :is(input[type="email"], input[type="tel"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime-local"]) {
+    direction: ltr;
+    text-align: left;
+}
+
+html[dir="rtl"] :is(.field-validation-error, .validation-summary-errors, .invalid-feedback, .validation-message) {
+    text-align: start;
+}
+
+/* --------------------------------------------------------------------------
+   ۶) جداول و لیست‌ها
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] :is(table) :is(th, td) {
+    text-align: start;
+}
+
+html[dir="rtl"] :is(ul, ol) {
+    padding-left: 0;
+    padding-inline-start: 0;
+}
+
+/* --------------------------------------------------------------------------
+   ۷) آیکون‌ها و نشانگرهای جهت‌دار
+   -------------------------------------------------------------------------- */
+/* هر المانی که با .rtl-flip علامت‌گذاری شود، در چیدمان راست‌به‌چپ قرینه می‌شود
+   (فلش «بازگشت»، پیکان «بعدی» و…). در حالت LTR دست‌نخورده می‌ماند.
+   توجه: دستگیره‌های تغییر اندازهٔ پنجرهٔ گفت‌وگو عمداً این کلاس را ندارند؛
+   آن‌ها مکان فیزیکی دارند و نباید قرینه شوند. */
+html[dir="rtl"] .rtl-flip,
+html[dir="rtl"] .rtl-flip :is(img, svg) {
+    transform: scaleX(-1);
+}

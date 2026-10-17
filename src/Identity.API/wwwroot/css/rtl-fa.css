@@ -1,0 +1,153 @@
+/* ==========================================================================
+   rtl-fa.css — راست‌به‌چپ و فونت فارسی صفحه‌های هویت (Identity)
+   --------------------------------------------------------------------------
+   Bootstrap 5.2 که در این پروژه با libman واکشی می‌شود نسخهٔ RTL ندارد،
+   بنابراین ابزارهای جهت‌دار (ms-*/me-*، ps-*/pe-*، text-start/end،
+   form-check، alert-dismissible، input-group) همین‌جا قرینه می‌شوند.
+   فایل باید بعد از bootstrap.min.css و css/site.css بارگذاری شود.
+   ========================================================================== */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/vazirmatn/Vazirmatn-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/vazirmatn/Vazirmatn-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/vazirmatn/Vazirmatn-Bold.woff2') format('woff2');
+}
+
+/* --------------------------------------------------------------------------
+   پایه
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] body {
+    font-family: 'Vazirmatn', system-ui, -apple-system, "Segoe UI", Tahoma, Roboto, sans-serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+}
+
+html[dir="rtl"] :is(h1, h2, h3, h4, h5, h6, p, a, li, label, span, td, th, button, input, textarea) {
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   ابزارهای جهتی Bootstrap — قرینه‌سازی
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .text-start { text-align: right !important; }
+html[dir="rtl"] .text-end   { text-align: left !important; }
+
+html[dir="rtl"] .ms-0 { margin-left: 0 !important; margin-right: 0 !important; }
+html[dir="rtl"] .me-0 { margin-right: 0 !important; margin-left: 0 !important; }
+
+/* ms-* (margin-inline-start) و me-* (margin-inline-end) در RTL جابه‌جا می‌شوند */
+html[dir="rtl"] .ms-1 { margin-left: 0 !important; margin-right: .25rem !important; }
+html[dir="rtl"] .ms-2 { margin-left: 0 !important; margin-right: .5rem !important; }
+html[dir="rtl"] .ms-3 { margin-left: 0 !important; margin-right: 1rem !important; }
+html[dir="rtl"] .ms-4 { margin-left: 0 !important; margin-right: 1.5rem !important; }
+html[dir="rtl"] .ms-5 { margin-left: 0 !important; margin-right: 3rem !important; }
+
+html[dir="rtl"] .me-1 { margin-right: 0 !important; margin-left: .25rem !important; }
+html[dir="rtl"] .me-2 { margin-right: 0 !important; margin-left: .5rem !important; }
+html[dir="rtl"] .me-3 { margin-right: 0 !important; margin-left: 1rem !important; }
+html[dir="rtl"] .me-4 { margin-right: 0 !important; margin-left: 1.5rem !important; }
+html[dir="rtl"] .me-5 { margin-right: 0 !important; margin-left: 3rem !important; }
+
+html[dir="rtl"] .ps-1 { padding-left: 0 !important; padding-right: .25rem !important; }
+html[dir="rtl"] .ps-2 { padding-left: 0 !important; padding-right: .5rem !important; }
+html[dir="rtl"] .ps-3 { padding-left: 0 !important; padding-right: 1rem !important; }
+html[dir="rtl"] .pe-1 { padding-right: 0 !important; padding-left: .25rem !important; }
+html[dir="rtl"] .pe-2 { padding-right: 0 !important; padding-left: .5rem !important; }
+html[dir="rtl"] .pe-3 { padding-right: 0 !important; padding-left: 1rem !important; }
+
+html[dir="rtl"] .float-start { float: right !important; }
+html[dir="rtl"] .float-end   { float: left !important; }
+
+html[dir="rtl"] .border-start { border-left: 0 !important; border-right: 1px solid #dee2e6 !important; }
+html[dir="rtl"] .border-end   { border-right: 0 !important; border-left: 1px solid #dee2e6 !important; }
+
+/* --------------------------------------------------------------------------
+   فرم‌ها
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .form-check {
+    padding-left: 0;
+    padding-right: 1.5em;
+}
+
+html[dir="rtl"] .form-check-input {
+    float: right;
+    margin-left: 0;
+    margin-right: -1.5em;
+}
+
+html[dir="rtl"] .form-check .form-check-input[type=checkbox] {
+    margin-top: .3em;
+}
+
+html[dir="rtl"] :is(input[type="text"], input[type="password"], input[type="email"], textarea, select) {
+    text-align: start;
+}
+
+/* رمز و نام‌کاربری (لاتین) چپ‌به‌راست تایپ می‌شوند */
+html[dir="rtl"] :is(input[type="password"], input[type="email"], input[type="number"]) {
+    direction: ltr;
+    text-align: left;
+}
+
+html[dir="rtl"] .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip) {
+    margin-right: 0;
+    margin-left: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--bs-border-radius, .375rem);
+    border-bottom-left-radius: var(--bs-border-radius, .375rem);
+}
+
+html[dir="rtl"] .alert-dismissible {
+    padding-right: 1.25rem;
+    padding-left: 4rem;
+}
+
+html[dir="rtl"] .alert-dismissible .btn-close {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .validation-summary-errors,
+html[dir="rtl"] .field-validation-error {
+    text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   صفحه‌های قدیمی‌تر (consent / grants / diagnostics) که در site.css
+   هنوز float فیزیکی دارند
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .page-consent .client-logo { float: right; }
+html[dir="rtl"] .form-label { text-align: right; }
+html[dir="rtl"] .btn-cart { float: left; }
+html[dir="rtl"] .btn-login { margin-right: 0; margin-left: 10px; }
+
+html[dir="rtl"] table :is(th, td) {
+    text-align: right;
+}
+
+/* ستون‌های جدول مجوزها با فاصلهٔ منطقی */
+html[dir="rtl"] :is(th, td).scope {
+    padding-left: 0;
+    padding-right: 1.1rem;
+}

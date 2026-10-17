@@ -18,7 +18,7 @@
     overflow: hidden;
     position: absolute;
     max-width: 100%;
-    left: 0;
+    inset-inline-start: 0;
     top: 0;
 }
 
@@ -55,7 +55,7 @@
 
 .eshop-header .logo-header {
     color: black;
-    margin-right: auto;
+    margin-inline-end: auto;
 }
 
 .eshop-header-navbar {

@@ -91,7 +91,7 @@
 }
 
 .total-header {
-    text-align: right;
+    text-align: end;
 }
 
 .order-number {
@@ -105,7 +105,7 @@
 
 .order-total {
     color: var(--color-ink);
-    text-align: right;
+    text-align: end;
     font-size: var(--text-base);
     font-weight: 700;
 }

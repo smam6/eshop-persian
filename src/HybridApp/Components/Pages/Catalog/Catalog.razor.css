@@ -18,7 +18,7 @@
 }
 
 .catalog .catalog-filter .filter-reset {
-    margin-left: auto;
+    margin-inline-start: auto;
 }
 
 .catalog .catalog-filter .filter-reset:hover {

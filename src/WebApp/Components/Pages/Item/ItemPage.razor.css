@@ -67,7 +67,7 @@
 /* Affordance badge so the zoom is discoverable; recedes while magnifying. */
 .item-zoom-hint {
     position: absolute;
-    right: 0.75rem;
+    inset-inline-end: 0.75rem;
     bottom: 0.75rem;
     display: grid;
     place-items: center;
@@ -210,7 +210,7 @@
 .item-lightbox-close {
     position: absolute;
     top: -0.75rem;
-    right: -0.75rem;
+    inset-inline-end: -0.75rem;
     display: grid;
     place-items: center;
     width: 2.5rem;
@@ -271,6 +271,6 @@
 @media only screen and (max-width: 560px) {
     .item-lightbox-close {
         top: 0.5rem;
-        right: 0.5rem;
+        inset-inline-end: 0.5rem;
     }
 }
