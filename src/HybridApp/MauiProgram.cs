@@ -1,4 +1,6 @@
-﻿using eShop.HybridApp.Services;
+﻿using System.Globalization;
+using eShop.HybridApp.Services;
+using eShop.WebAppComponents.Services;
 using Microsoft.Extensions.Logging;
 
 namespace eShop.HybridApp;
@@ -11,6 +13,21 @@ public static class MauiProgram
 
     public static MauiApp CreateMauiApp()
     {
+        // فارسی‌سازی کلاینت موبایل: تقویم شمسی، جداکننده‌های فارسی و واحد تومان.
+        // داده‌ها در سرور همان DateTime میلادی/decimal می‌مانند؛ فقط نمایش تغییر می‌کند.
+        var persianOptions = new PersianFormattingOptions
+        {
+            UsePersianDigits = true,
+            CurrencySymbol = "تومان",
+            CurrencyDecimals = 0
+        };
+
+        var persianCulture = PersianCultureHelper.GetPersianCulture(persianOptions);
+        PersianFormat.Configure(persianOptions);
+
+        CultureInfo.DefaultThreadCurrentCulture = persianCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = persianCulture;
+
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()

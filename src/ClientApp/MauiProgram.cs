@@ -23,6 +23,9 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        // تقویم شمسی، واحد تومان و جداکننده‌های فارسی برای همهٔ نمایش‌ها
+        PersianGlobalization.Apply();
+
         return MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()

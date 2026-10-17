@@ -83,7 +83,7 @@
             <Label
                 Grid.Row="4"
                 Grid.Column="0"
-                Text="{Binding CatalogItem.Price, StringFormat='{0:C2}', Mode=OneWay}"
+                Text="{Binding CatalogItem.Price, StringFormat='{0:C}', Mode=OneWay}"
                 VerticalTextAlignment="Center" />
 
             <Button

@@ -1,4 +1,5 @@
-﻿@using System.Net
+﻿@using System.Globalization
+@using System.Net
 @attribute [StreamRendering]
 @inject BasketState Basket
 @inject LogOutService LogOutService
@@ -9,7 +10,7 @@
 {
     <a class="cart-button" aria-label="@AriaLabel" href="cart">
         <img class="cart-button-icon" role="presentation" src="icons/cart.svg" />
-        <span class="cart-button-count" @key="qty">@(qty > 99 ? "99+" : qty.ToString())</span>
+        <span class="cart-button-count" @key="qty">@(PersianFormat.ToPersianDigits(qty > 99 ? "99+" : qty.ToString(CultureInfo.InvariantCulture)))</span>
     </a>
 }
 else

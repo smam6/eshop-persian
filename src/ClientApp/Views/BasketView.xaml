@@ -84,7 +84,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 HorizontalTextAlignment="End"
-                Text="{Binding Total, StringFormat='${0:N2}'}" />
+                Text="{Binding Total, StringFormat='{0:C}'}" />
             <Button
                 Grid.Row="2"
                 Grid.Column="0"

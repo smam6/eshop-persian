@@ -124,7 +124,7 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Style="{StaticResource OrderContentStyle}"
-                    Text="{Binding Order.Total, StringFormat='${0:N2}'}" />
+                    Text="{Binding Order.Total, StringFormat='{0:C}'}" />
 
                 <Label
                     Grid.Row="0"
@@ -182,7 +182,7 @@
                     <Label Style="{StaticResource OrderTotalStyle}" Text="TOTAL" />
                     <Label
                         Style="{StaticResource OrderTotalStyle}"
-                        Text="{Binding Order.Total, StringFormat='${0:N2}'}"
+                        Text="{Binding Order.Total, StringFormat='{0:C}'}"
                         TextColor="{StaticResource ImportantColor}" />
                 </VerticalStackLayout>
             </CollectionView.Footer>

@@ -61,7 +61,7 @@
                 Grid.Column="1"
                 MaxLines="1"
                 Style="{StaticResource ProductPriceStyle}"
-                Text="{Binding Price, Mode=OneTime, StringFormat='${0:N2}'}"
+                Text="{Binding Price, Mode=OneTime, StringFormat='{0:C}'}"
                 VerticalTextAlignment="Start" />
         </Grid>
     </ContentView.Content>

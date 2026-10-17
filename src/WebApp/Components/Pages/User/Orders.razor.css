@@ -1,4 +1,4 @@
-.orders {
+﻿.orders {
     max-width: var(--content-max);
     margin: 0 auto;
     padding: 0 var(--page-pad) 4rem;
@@ -101,6 +101,14 @@
 
 .order-date {
     color: var(--color-ink-2);
+}
+
+/* برچسب «دیروز / ۲ روز پیش» زیر تاریخ شمسی */
+.order-date-relative {
+    display: block;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    line-height: 1.5;
 }
 
 .order-total {

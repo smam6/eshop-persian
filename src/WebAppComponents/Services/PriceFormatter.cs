@@ -1,11 +1,23 @@
-﻿using System.Globalization;
+using System.Globalization;
 
 namespace eShop.WebAppComponents.Services;
 
+/// <summary>
+/// قالب‌بندی قیمت برای نمایش در رابط کاربری.
+/// در فرهنگ فارسی مبلغ به <c>تومان</c> با ارقام فارسی و جداکنندهٔ هزارگان
+/// «٬» و بدون رقم اعشار، و در فرهنگ‌های دیگر همان رفتار پیشین eShop
+/// (دلار با دو رقم اعشار) برگردانده می‌شود.
+/// </summary>
 public static class PriceFormatter
 {
-    // Formats a monetary amount with thousands separators and two decimals
-    // (e.g. 1234.5m -> "1,234.50") using invariant culture to match the "$" prefix.
+    /// <summary>
+    /// نمایش قیمت. نماد واحد پول داخل همین خروجی است؛ پس در .razor پیشوند
+    /// <c>$</c> جداگانه نوشته نمی‌شود.
+    /// </summary>
     public static string ToPriceDisplay(this decimal value)
-        => value.ToString("N2", CultureInfo.InvariantCulture);
+        => value.ToPriceDisplay(CultureInfo.CurrentCulture);
+
+    /// <inheritdoc cref="ToPriceDisplay(decimal)"/>
+    public static string ToPriceDisplay(this decimal value, CultureInfo culture)
+        => PersianFormat.FormatCurrency(value, culture);
 }

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Catalog.API\Catalog.API.csproj" />
+    <ProjectReference Include="..\..\src\WebAppComponents\WebAppComponents.csproj" />
     <ProjectReference Include="..\..\src\Identity.API\Identity.API.csproj" />
     <ProjectReference Include="..\..\src\OrderProcessor\OrderProcessor.csproj" />
     <ProjectReference Include="..\..\src\PaymentProcessor\PaymentProcessor.csproj" />

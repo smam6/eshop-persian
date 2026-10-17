@@ -125,6 +125,12 @@
         }
     }
 
+    // تاریخ انقضا باید حتماً با فرهنگ اینواریانت تجزیه شود: اگر CurrentCulture
+    // (که fa-IR و تقویم شمسی است) به‌کار رود، «۱۴۰۳/۰۵/۲۴» به‌جای سال میلادی
+    // تفسیر می‌شود و تاریخ نادرست در دیتابیس ذخیره می‌گردد.
+    // رقم فارسی ورودی کاربر هم قبل از تجزیه به لاتین تبدیل می‌شود.
     private static DateTime? ParseExpiryDate(string? mmyy)
-        => DateTime.TryParseExact($"01/{mmyy}", "dd/MM/yy", null, DateTimeStyles.None, out var result) ? result.ToUniversalTime() : null;
+        => DateTime.TryParseExact($"01/{PersianFormat.ToLatinDigits(mmyy)}", "dd/MM/yy", CultureInfo.InvariantCulture, DateTimeStyles.None, out var result)
+            ? result.ToUniversalTime()
+            : null;
 }

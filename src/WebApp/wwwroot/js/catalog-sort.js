@@ -38,7 +38,9 @@
         const name = el => el.dataset.sortName || '';
         const price = el => parseFloat(el.dataset.sortPrice) || 0;
 
-        const byName = (a, b) => name(a).localeCompare(name(b), undefined, { sensitivity: 'base', numeric: true });
+        // مرتب‌سازی نام با هم‌سنجی زبانیِ سند (فارسی → ترتیب حروف الفبای فارسی).
+        const collation = (document.documentElement.lang || 'fa').split('-')[0];
+        const byName = (a, b) => name(a).localeCompare(name(b), collation, { sensitivity: 'base', numeric: true });
         const byPrice = (a, b) => price(a) - price(b);
 
         let primary;
@@ -86,7 +88,12 @@
 
     function reflect(r, value) {
         const valueEl = r.querySelector('[data-catalog-sort-value]');
-        if (valueEl) valueEl.textContent = LABELS.get(value) || LABELS.get('name-asc');
+        if (valueEl) {
+            // برچسب از خودِ فهرست (متن ترجمه‌شده در Markup) خوانده می‌شود و
+            // جدول LABELS فقط پیش‌نویسِ انگلیسی/پشتیبان است.
+            const opt = optionsOf(r).find(o => o.dataset.value === value);
+            valueEl.textContent = (opt && opt.textContent.trim()) || LABELS.get(value) || LABELS.get('name-asc');
+        }
         for (const opt of optionsOf(r)) {
             opt.setAttribute('aria-selected', opt.dataset.value === value ? 'true' : 'false');
         }

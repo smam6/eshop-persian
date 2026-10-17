@@ -1,3 +1,5 @@
+@using System.Globalization
+
 <footer class='eshop-footer'>
   <div class='eshop-footer-content'>
     <div class='eshop-footer-main'>
@@ -61,7 +63,7 @@
       </nav>
     </div>
     <div class='eshop-footer-bottom'>
-      <p class='eshop-footer-copy'>© @DateTime.Now.Year AdventureWorks. All rights reserved.</p>
+      <p class='eshop-footer-copy'>© @CopyrightYear AdventureWorks. All rights reserved.</p>
       <ul class='eshop-footer-legal' aria-label="Legal">
         <li><a>Privacy</a></li>
         <li><a>Terms</a></li>
@@ -70,3 +72,18 @@
     </div>
   </div>
 </footer>
+
+@code {
+    /// <summary>
+    /// سال کپی‌رایت: در فرهنگ فارسی سال هجری شمسی و در غیر این صورت سال میلادی.
+    /// </summary>
+    private string CopyrightYear
+    {
+        get
+        {
+            var isPersian = PersianFormat.IsPersian();
+            var year = isPersian ? DateTime.Now.ToPersianYear() : DateTime.Now.Year;
+            return PersianFormat.ToPersianDigits(year.ToString(CultureInfo.InvariantCulture), isPersian);
+        }
+    }
+}
