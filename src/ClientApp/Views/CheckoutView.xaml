@@ -7,7 +7,7 @@
     xmlns:templates="clr-namespace:eShop.ClientApp.Views.Templates"
     xmlns:viewmodels="clr-namespace:eShop.ClientApp.ViewModels"
     xmlns:views="clr-namespace:eShop.ClientApp.Views"
-    Title="CHECKOUT"
+    Title="تسویه حساب"
     x:DataType="viewmodels:CheckoutViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -66,7 +66,7 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Style="{StaticResource OrderTitleStyle}"
-                Text="ORDER NUMBER" />
+                Text="شمارهٔ سفارش" />
             <Label
                 Grid.Row="1"
                 Grid.Column="0"
@@ -77,7 +77,7 @@
                 Grid.Row="3"
                 Grid.Column="0"
                 Style="{StaticResource OrderTitleStyle}"
-                Text="TOTAL" />
+                Text="مجموع" />
             <Label
                 Grid.Row="4"
                 Grid.Column="0"
@@ -88,7 +88,7 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Style="{StaticResource OrderTitleStyle}"
-                Text="DATE" />
+                Text="تاریخ" />
             <Label
                 Grid.Row="1"
                 Grid.Column="1"
@@ -99,7 +99,7 @@
                 Grid.Row="3"
                 Grid.Column="1"
                 Style="{StaticResource OrderTitleStyle}"
-                Text="STATUS" />
+                Text="وضعیت" />
             <Label
                 Grid.Row="4"
                 Grid.Column="1"
@@ -112,7 +112,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Style="{StaticResource ShippingAddressStyle}"
-                Text="SHIPPING ADDRESS" />
+                Text="نشانی ارسال" />
 
             <VerticalStackLayout
                 Grid.Row="7"
@@ -148,7 +148,7 @@
                 BackgroundColor="Black"
                 Command="{Binding CheckoutCommand}"
                 CornerRadius="4"
-                Text="Place order" />
+                Text="ثبت سفارش" />
         </Grid>
         <!--  INDICATOR  -->
         <ActivityIndicator

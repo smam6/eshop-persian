@@ -1,4 +1,4 @@
-@inject CatalogService CatalogService
+﻿@inject CatalogService CatalogService
 @inject NavigationManager Nav
 
 @if (catalogBrands is not null && catalogItemTypes is not null)
@@ -8,7 +8,7 @@
             <summary class="catalog-search-summary">
                 <span class="catalog-search-title">
                     <img role="presentation" src="icons/filters.svg" />
-                    Filters
+                    @FiltersLabel
                     @if (ActiveFilterCount > 0)
                     {
                         <span class="catalog-search-title-count">@ActiveFilterCount</span>
@@ -23,16 +23,16 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M18 6 6 18M6 6l12 12" />
                         </svg>
-                        Clear all filters
+                        @ClearFiltersLabel
                     </a>
                 }
 
                 <div class="catalog-search-group">
-                    <h3>Brand</h3>
+                    <h3>@BrandLabel</h3>
                     <div class="catalog-search-group-tags">
                         <a href="@BrandUri(null)"
                            class="catalog-search-tag @(BrandActiveCount == 0 ? "active" : "")">
-                            <span>All</span>
+                            <span>@AllLabel</span>
                             <span class="catalog-search-tag-count">@BrandCount(null)</span>
                         </a>
                         @foreach (var brand in catalogBrands)
@@ -44,17 +44,17 @@
                                class="catalog-search-tag @(isActive ? "active" : "") @(isEmpty ? "is-empty" : "")"
                                aria-disabled="@(isEmpty ? "true" : null)">
                                 <span>@brand.Brand</span>
-                                <span class="catalog-search-tag-count">@count</span>
+                                <span class="catalog-search-tag-count">@FaNumber(count)</span>
                             </a>
                         }
                     </div>
                 </div>
                 <div class="catalog-search-group">
-                    <h3>Type</h3>
+                    <h3>@TypeLabel</h3>
                     <div class="catalog-search-group-tags">
                         <a href="@TypeUri(null)"
                            class="catalog-search-tag @(TypeActiveCount == 0 ? "active" : "")">
-                            <span>All</span>
+                            <span>@AllLabel</span>
                             <span class="catalog-search-tag-count">@TypeCount(null)</span>
                         </a>
                         @foreach (var itemType in catalogItemTypes)
@@ -66,7 +66,7 @@
                                class="catalog-search-tag @(isActive ? "active" : "") @(isEmpty ? "is-empty" : "")"
                                aria-disabled="@(isEmpty ? "true" : null)">
                                 <span>@itemType.Type</span>
-                                <span class="catalog-search-tag-count">@count</span>
+                                <span class="catalog-search-tag-count">@FaNumber(count)</span>
                             </a>
                         }
                     </div>
@@ -82,6 +82,15 @@
     CatalogFacets? facets;
 
     [Parameter] public int[]? BrandIds { get; set; }
+
+    // این کامپوننت میان WebApp و HybridApp مشترک است و فقط WebApp خدمات
+    // محلی‌سازی دارد؛ پس برچسب‌ها پارامتراند با پیش‌فرض فارسی و صفحهٔ
+    // کاتالوگِ WebApp مقادیر ترجمه‌شده را از منابع تزریق می‌کند.
+    [Parameter] public string FiltersLabel { get; set; } = "فیلترها";
+    [Parameter] public string ClearFiltersLabel { get; set; } = "پاک‌کردن همهٔ فیلترها";
+    [Parameter] public string BrandLabel { get; set; } = "برند";
+    [Parameter] public string TypeLabel { get; set; } = "دسته‌بندی";
+    [Parameter] public string AllLabel { get; set; } = "همه";
     [Parameter] public int[]? TypeIds { get; set; }
 
     private IReadOnlyList<int> Brands => BrandIds ?? [];
@@ -174,6 +183,10 @@
     // A null id clears the facet ("All"). Otherwise toggle the id's membership in the
     // current set and return an array (emitted as repeated query params) or null when the
     // set becomes empty.
+    // شمارهٔ کالاها در برچسب فیلترها با ارقام فارسی
+    private static string FaNumber(int value)
+        => PersianFormat.ToPersianDigits(value.ToString(System.Globalization.CultureInfo.InvariantCulture));
+
     private static int[]? ToggleValue(IReadOnlyList<int> current, int? id)
     {
         if (id is null)

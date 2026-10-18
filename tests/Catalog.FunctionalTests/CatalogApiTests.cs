@@ -157,6 +157,11 @@ public sealed class CatalogApiTests : IClassFixture<CatalogApiFixture>
         Assert.NotNull(result);
     }
 
+    // دادهٔ نمونهٔ فارسی (catalog.json): نام دقیق/پیشوند/عبارت جست‌وجو
+    private const string ExactItemName = "چکمه کوهنوردی واندرر مشکی";
+    private const string PartialItemName = "چوب‌دست";
+    private const string SemanticSearchTerm = "پیراهن";
+
     [Theory]
     [InlineData(1.0)]
     [InlineData(2.0)]
@@ -167,8 +172,8 @@ public sealed class CatalogApiTests : IClassFixture<CatalogApiFixture>
         // Act
         var response = version switch
         {
-            1.0 => await _httpClient.GetAsync("api/catalog/items/by/Wanderer%20Black%20Hiking%20Boots?PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
-            2.0 => await _httpClient.GetAsync("api/catalog/items?name=Wanderer%20Black%20Hiking%20Boots&PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
+            1.0 => await _httpClient.GetAsync($"api/catalog/items/by/{Uri.EscapeDataString(ExactItemName)}?PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
+            2.0 => await _httpClient.GetAsync($"api/catalog/items?name={Uri.EscapeDataString(ExactItemName)}&PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
             _ => throw new ArgumentOutOfRangeException(nameof(version), version, null)
         };
 
@@ -182,7 +187,7 @@ public sealed class CatalogApiTests : IClassFixture<CatalogApiFixture>
         Assert.Equal(1, result.Count);
         Assert.Equal(0, result.PageIndex);
         Assert.Equal(5, result.PageSize);
-        Assert.Equal("Wanderer Black Hiking Boots", result.Data.ToList().FirstOrDefault().Name);
+        Assert.Equal(ExactItemName, result.Data.ToList().FirstOrDefault().Name);
     }
 
     [Theory]
@@ -195,8 +200,8 @@ public sealed class CatalogApiTests : IClassFixture<CatalogApiFixture>
         // Act
         var response = version switch
         {
-            1.0 => await _httpClient.GetAsync("api/catalog/items/by/Alpine?PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
-            2.0 => await _httpClient.GetAsync("api/catalog/items?name=Alpine&PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
+            1.0 => await _httpClient.GetAsync($"api/catalog/items/by/{Uri.EscapeDataString(PartialItemName)}?PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
+            2.0 => await _httpClient.GetAsync($"api/catalog/items?name={Uri.EscapeDataString(PartialItemName)}&PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
             _ => throw new ArgumentOutOfRangeException(nameof(version), version, null)
         };
 
@@ -210,7 +215,7 @@ public sealed class CatalogApiTests : IClassFixture<CatalogApiFixture>
         Assert.Equal(4, result.Count);
         Assert.Equal(0, result.PageIndex);
         Assert.Equal(5, result.PageSize);
-        Assert.Contains("Alpine", result.Data.ToList().FirstOrDefault().Name);
+        Assert.Contains(PartialItemName, result.Data.ToList().FirstOrDefault().Name);
     }
 
     [Theory]
@@ -277,8 +282,8 @@ public sealed class CatalogApiTests : IClassFixture<CatalogApiFixture>
         // Act
         var response = version switch
         {
-            1.0 => await _httpClient.GetAsync("api/catalog/items/withsemanticrelevance/Wanderer?PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
-            2.0 => await _httpClient.GetAsync("api/catalog/items/withsemanticrelevance?text=Wanderer&PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
+            1.0 => await _httpClient.GetAsync($"api/catalog/items/withsemanticrelevance/{Uri.EscapeDataString(SemanticSearchTerm)}?PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
+            2.0 => await _httpClient.GetAsync($"api/catalog/items/withsemanticrelevance?text={Uri.EscapeDataString(SemanticSearchTerm)}&PageSize=5&PageIndex=0", TestContext.Current.CancellationToken),
             _ => throw new ArgumentOutOfRangeException(nameof(version), version, null)
         };
 

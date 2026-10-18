@@ -7,7 +7,7 @@
     xmlns:templates="clr-namespace:eShop.ClientApp.Views.Templates"
     xmlns:viewmodels="clr-namespace:eShop.ClientApp.ViewModels"
     xmlns:views="clr-namespace:eShop.ClientApp.Views"
-    Title="Orders"
+    Title="سفارش‌ها"
     x:DataType="viewmodels:ProfileViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -32,7 +32,7 @@
             <Label
                 HorizontalOptions="Center"
                 IsVisible="{Binding Orders.Count, Mode=OneWay, Converter={StaticResource DoesNotHaveCountConverter}}"
-                Text="NO ORDERS"
+                Text="سفارشی موجود نیست"
                 VerticalOptions="Center" />
         </Grid>
         <CollectionView

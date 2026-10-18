@@ -16,7 +16,7 @@
         <div class="description">
             <p>@item.Description</p>
             <p>
-                Brand: <strong>@item.CatalogBrand?.Brand</strong>
+                برند: <strong>@item.CatalogBrand?.Brand</strong>
             </p>
             <form class="add-to-cart" >
                 <span class="price">@item.Price.ToPriceDisplay()</span>
@@ -24,16 +24,16 @@
 
         @*     @if (numInCart > 0)
             {
-                <p><strong>@numInCart</strong> in <a href="cart">shopping bag</a></p>
+                <p><strong>@numInCart</strong> کالا در <a href="cart">سبد خرید</a></p>
             } *@
         </div>
     </div>
 }
 else if (notFound)
 {
-    <SectionContent SectionName="page-header-title">Not found</SectionContent>
+    <SectionContent SectionName="page-header-title">یافت نشد</SectionContent>
     <div class="item-details">
-        <p>Sorry, we couldn't find any such product.</p>
+        <p>متأسفانه چنین محصولی پیدا نشد.</p>
     </div>
 }
 

@@ -1,12 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Components.Endpoints
+@inject IStringLocalizer<SharedResources> L
 
 <header class="eshop-topbar">
     <div class="eshop-topbar-inner">
-        <a class="eshop-brand" href="" aria-label="AdventureWorks home">
-            <img alt="AdventureWorks" src="images/logo-header.svg" />
+        <a class="eshop-brand" href="" aria-label="@(L["Header_HomeAria"])">
+            <img alt="@(L["BrandName"])" src="images/logo-header.svg" />
         </a>
-        <nav class="eshop-topnav" aria-label="Primary">
-            <a class="eshop-topnav-link @(IsCatalog ? "is-current" : "")" href="">Shop all</a>
+        <nav class="eshop-topnav" aria-label="@(L["Header_PrimaryNavAria"])">
+            <a class="eshop-topnav-link @(IsCatalog ? "is-current" : "")" href="">@L["Nav_ShopAll"]</a>
         </nav>
         <div class="eshop-topbar-actions">
             <UserMenu />

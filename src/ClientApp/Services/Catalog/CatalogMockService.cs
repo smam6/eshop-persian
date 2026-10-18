@@ -8,7 +8,7 @@ public class CatalogMockService : ICatalogService
         new() {new CatalogBrand {Id = 1, Brand = "Azure"}, new CatalogBrand {Id = 2, Brand = "Visual Studio"}};
 
     private static readonly List<CatalogType> MockCatalogTypes =
-        new() {new CatalogType {Id = 1, Type = "Mug"}, new CatalogType {Id = 2, Type = "T-Shirt"}};
+        new() {new CatalogType {Id = 1, Type = "ماگ"}, new CatalogType {Id = 2, Type = "تی‌شرت"}};
 
     private static readonly List<CatalogItem> MockCatalog =
         new()
@@ -17,61 +17,61 @@ public class CatalogMockService : ICatalogService
             {
                 Id = Common.Common.MockCatalogItemId01,
                 PictureUri = "fake_product_01.png",
-                Name = "Adventurer GPS Watch",
-                Price = 199.99M,
+                Name = "ساعت مچی جی‌پی‌اس ادونچرر",
+                Price = 20000000M,
                 CatalogBrandId = 2,
                 CatalogBrand = MockCatalogBrands[1],
                 CatalogTypeId = 2,
                 CatalogType = MockCatalogTypes[1],
-                Description = "Navigate with confidence using the Adventurer GPS Watch by Adventurer. This rugged and durable watch features a built-in GPS, altimeter, and compass, allowing you to track your progress and find your way in any terrain. With its sleek black design and easy-to-read display, this watch is both stylish and practical. The Adventurer GPS Watch is a must-have for every adventurer."
+                Description = "با اعتمادبه‌نفس مسیرتان را پیدا کنید؛ ساعت مچی ادونچرر بدنه‌ای مقاوم دارد و جی‌پی‌اس داخلی، قطب‌نما و ارتفاع‌سنج آن در هر زمینی همراهتان است. طراحی مشکی و خوانای آن، زیبایی و کارایی را با هم دارد."
             },
             new CatalogItem
             {
                 Id = Common.Common.MockCatalogItemId02,
                 PictureUri = "fake_product_02.png",
-                Name = "AeroLite Cycling Helmet",
-                Price = 129.99M,
+                Name = "کلاه ایمنی دوچرخه‌سواری ایرولایت",
+                Price = 13000000M,
                 CatalogBrandId = 2,
                 CatalogBrand = MockCatalogBrands[1],
                 CatalogTypeId = 2,
                 CatalogType = MockCatalogTypes[1],
-                Description = "Stay safe on your cycling adventures with the Trailblazer Bike Helmet by Green Equipment. This lightweight and durable helmet features an adjustable fit system and ventilation for added comfort. With its vibrant green color and sleek design, you'll stand out on the road. The Trailblazer Bike Helmet is perfect for all types of cycling, from mountain biking to road cycling."
+                Description = "در ماجراجویی‌های دوچرخه‌سواری ایمن بمانید؛ کلاه ایرولایت سبک و مقاوم است و سیستم تنظیم اندازه و تهویهٔ آن راحتی را فراهم می‌کند. رنگ سبز و طراحی سادهٔ آن در جاده چشمگیر است و برای دوچرخه‌سواری کوهستان و جاده مناسب است."
             },
             new CatalogItem
             {
                 Id = Common.Common.MockCatalogItemId03,
                 PictureUri = "fake_product_03.png",
-                Name = "Alpine AlpinePack Backpack",
-                Price = 129.00M,
+                Name = "کوله‌پشتی آلپاین‌پک",
+                Price = 12900000M,
                 CatalogBrandId = 2,
                 CatalogBrand = MockCatalogBrands[1],
                 CatalogTypeId = 2,
                 CatalogType = MockCatalogTypes[1],
-                Description = "The AlpinePack backpack by Green Equipment is your ultimate companion for outdoor adventures. This versatile and durable backpack features a sleek navy design with reinforced straps. With a capacity of 45 liters, multiple compartments, and a hydration pack sleeve, it offers ample storage and organization. The ergonomic back panel ensures maximum comfort, even on the most challenging treks."
+                Description = "کوله‌پشتی آلپاین‌پک همراه همه‌فن شما در فضای باز است؛ طراحی سرمه‌ای با بندهای تقویت‌شده، ظرفیت ۴۵ لیتر، چندین بخش جداگانه و جای مخصوص قمقمه آب دارد. پشتی ارگونومیک آن حتی در سخت‌ترین مسیرها راحتی را حفظ می‌کند."
             },
             new CatalogItem
             {
                 Id = Common.Common.MockCatalogItemId04,
                 PictureUri = "fake_product_04.png",
-                Name = "Alpine Fusion Goggles",
-                Price = 79.99M,
+                Name = "عینک اسکی فیوژن",
+                Price = 8000000M,
                 CatalogBrandId = 2,
                 CatalogBrand = MockCatalogBrands[1],
                 CatalogTypeId = 1,
                 CatalogType = MockCatalogTypes[0],
-                Description = "Enhance your skiing experience with the Alpine Fusion Goggles from WildRunner. These goggles offer full UV protection and anti-fog lenses to keep your vision clear on the slopes. With their stylish silver frame and orange lenses, you'll stand out from the crowd. Adjustable straps ensure a secure fit, while the soft foam padding provides comfort all day long."
+                Description = "تجربهٔ اسکی خود را با عینک فیوژن کامل‌تر کنید؛ محافظت کامل در برابر اشعهٔ فرابنفش و عدسی‌های ضدبخار، دید شما را در شیب باز نگه می‌دارد. فریم نقره‌ای و عدسی نارنجی‌اش با بند تنظیم‌شونده و فوم نرم، راحتی یک‌روزه می‌سازد."
             },
             new CatalogItem
             {
                 Id = Common.Common.MockCatalogItemId05,
                 PictureUri = "fake_product_05.png",
-                Name = "Alpine PeakDown Jacket",
-                Price = 249.99M,
+                Name = "کاپشن پر آلپاین‌پیک",
+                Price = 25000000M,
                 CatalogBrandId = 1,
                 CatalogBrand = MockCatalogBrands[0],
                 CatalogTypeId = 2,
                 CatalogType = MockCatalogTypes[1],
-                Description = "The Solstix Alpine Peak Down Jacket is crafted for extreme cold conditions. With its bold red color and sleek design, this jacket combines style with functionality. Made with high-quality goose down insulation, the Alpine Peak Jacket provides exceptional warmth and comfort. The jacket features a removable hood, adjustable cuffs, and multiple zippered pockets for storage. Conquer the harshest weather with the Solstix Alpine Peak Down Jacket."
+                Description = "کاپشن پر آلپاین‌پیک برای سرمای طاقت‌فرسا ساخته شده است؛ رنگ قرمز جسورانه و طراحی ساده‌اش، سبک و کارایی را به هم می‌رساند. عایق پر غاز باکیفیت، گرمای بی‌نظیری می‌دهد و کلاه جداشدنی، سرآستین تنظیم‌شونده و چند جیب زیپ‌دار دارد."
             }
         };
 

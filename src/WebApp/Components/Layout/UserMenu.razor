@@ -4,25 +4,26 @@
 @using Microsoft.AspNetCore.Authentication
 @inject LogOutService LogOutService
 @inject NavigationManager Nav
+@inject IStringLocalizer<SharedResources> L
 
 <AuthorizeView>
     <Authorized>
         <div class="user-menu">
-            <button type="button" class="icon-button" aria-label="Account" aria-haspopup="true">
+            <button type="button" class="icon-button" aria-label="@(L["Menu_Account"])" aria-haspopup="true">
                 <img role="presentation" src="icons/user.svg" />
             </button>
             <div class="user-menu-panel">
                 <p class="user-menu-name">@context.User.Identity?.Name</p>
-                <a class="user-menu-item" href="user/orders">My orders</a>
+                <a class="user-menu-item" href="user/orders">@L["MyOrders"]</a>
                 <form class="user-menu-item" method="post" action="user/logout" @formname="logout" @onsubmit="LogOutAsync">
                     <AntiforgeryToken />
-                    <button type="submit">Log out</button>
+                    <button type="submit">@L["Logout"]</button>
                 </form>
             </div>
         </div>
     </Authorized>
     <NotAuthorized>
-        <a class="icon-button" aria-label="Sign in" href="@Pages.User.LogIn.Url(Nav)"><img role="presentation" src="icons/user.svg" /></a>
+        <a class="icon-button" aria-label="@(L["Menu_SignIn"])" href="@Pages.User.LogIn.Url(Nav)"><img role="presentation" src="icons/user.svg" /></a>
     </NotAuthorized>
 </AuthorizeView>
 

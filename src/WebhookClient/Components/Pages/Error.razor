@@ -1,27 +1,26 @@
 ﻿@page "/Error"
 @using System.Diagnostics
 
-<PageTitle>Error</PageTitle>
+<PageTitle>خطا</PageTitle>
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">خطا.</h1>
+<h2 class="text-danger">هنگام پردازش درخواست شما خطایی رخ داد.</h2>
 
 @if (ShowRequestId)
 {
     <p>
-        <strong>Request ID:</strong> <code>@RequestId</code>
+        <strong>شناسهٔ درخواست:</strong> <code dir="ltr">@RequestId</code>
     </p>
 }
 
-<h3>Development Mode</h3>
+<h3>حالت توسعه</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    با تغییر به محیط <strong dir="ltr">Development</strong>، اطلاعات دقیق‌تری دربارهٔ خطای رخ‌داده نمایش داده می‌شود.
 </p>
 <p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
+    <strong>محیط توسعه (Development) نباید برای کاربردهای مستقرشده فعال شود.</strong>
+    چنین کاری ممکن است باعث افشای اطلاعات حساسِ نهفته در استثناها به کاربران نهایی شود.
+    برای اشکال‌زدایی محلی، با تنظیم متغیر محیطی <strong dir="ltr">ASPNETCORE_ENVIRONMENT</strong> روی مقدار <strong dir="ltr">Development</strong> و راه‌اندازی مجدد کاربرد، این محیط را فعال کنید.
 </p>
 
 @code{

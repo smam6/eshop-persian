@@ -1,5 +1,6 @@
-@inherits LayoutComponentBase
+﻿@inherits LayoutComponentBase
 @using eShop.WebApp.Components.Chatbot
+@inject IStringLocalizer<SharedResources> L
 
 <HeaderBar />
 @* جهت راست‌به‌چپ روی ریشهٔ محتوا هم تکرار می‌شود تا محتوای اجزای
@@ -11,7 +12,7 @@
 <ShowChatbotButton />
 
 <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
+    @L["Error_Unhandled"]
+    <a href="" class="reload">@L["Error_Reload"]</a>
     <a class="dismiss">🗙</a>
 </div>

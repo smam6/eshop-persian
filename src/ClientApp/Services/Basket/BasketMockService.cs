@@ -14,9 +14,9 @@ public class BasketMockService : IBasketService
             Id = "1",
             PictureUrl = "fake_product_01.png",
             ProductId = Common.Common.MockCatalogItemId01,
-            ProductName = ".NET Bot Blue Sweatshirt (M)",
+            ProductName = "سوییشرت آبی دات‌نت‌بات (سایز M)",
             Quantity = 1,
-            UnitPrice = 19.50M
+            UnitPrice = 1950000M
         });
 
         _mockCustomBasket.AddItemToBasket(new BasketItem
@@ -24,9 +24,9 @@ public class BasketMockService : IBasketService
             Id = "2",
             PictureUrl = "fake_product_04.png",
             ProductId = Common.Common.MockCatalogItemId04,
-            ProductName = ".NET Black Cup",
+            ProductName = "ماگ مشکی دات‌نت",
             Quantity = 1,
-            UnitPrice = 17.00M
+            UnitPrice = 1700000M
         });
     }
 

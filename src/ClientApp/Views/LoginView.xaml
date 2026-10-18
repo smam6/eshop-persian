@@ -72,7 +72,7 @@
               BackgroundColor="Black"
               Command="{Binding SignInCommand}"
               CornerRadius="16"
-              Text="Login"
+              Text="ورود"
               TextColor="White" />
 
         <ActivityIndicator

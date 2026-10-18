@@ -5,6 +5,7 @@
 @inject LogOutService LogOutService
 @inject NavigationManager NavigationManager
 @implements IDisposable
+@inject IStringLocalizer<SharedResources> L
 
 @if (TotalQuantity is int qty && qty > 0)
 {
@@ -15,7 +16,7 @@
 }
 else
 {
-    <a class="icon-button" aria-label="Shopping bag" href="cart">
+    <a class="icon-button" aria-label="@(L["ShoppingBag"])" href="cart">
         <img role="presentation" src="icons/cart.svg" />
     </a>
 }
@@ -29,7 +30,7 @@ else
 
     private int? TotalQuantity => basketItems?.Sum(i => i.Quantity);
 
-    private string AriaLabel => $"Shopping bag, {TotalQuantity} item{(TotalQuantity == 1 ? "" : "s")}";
+    private string AriaLabel => L["Cart_AriaCount", PersianFormat.ToPersianDigits(TotalQuantity?.ToString(CultureInfo.InvariantCulture) ?? "0")];
 
     protected override async Task OnInitializedAsync()
     {

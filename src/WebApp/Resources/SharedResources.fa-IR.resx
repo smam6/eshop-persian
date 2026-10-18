@@ -58,31 +58,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppName" xml:space="preserve"><value>فروشگاه آنلاین AdventureWorks</value></data>
-  <data name="Home" xml:space="preserve"><value>خانه</value></data>
   <data name="ShopAll" xml:space="preserve"><value>نمایش همهٔ محصولات</value></data>
   <data name="ShoppingBag" xml:space="preserve"><value>سبد خرید</value></data>
   <data name="Checkout" xml:space="preserve"><value>تسویه حساب</value></data>
   <data name="MyOrders" xml:space="preserve"><value>سفارش‌های من</value></data>
-  <data name="Login" xml:space="preserve"><value>ورود</value></data>
   <data name="Logout" xml:space="preserve"><value>خروج</value></data>
-  <data name="Search" xml:space="preserve"><value>جستجو</value></data>
-  <data name="Filter" xml:space="preserve"><value>پالایش</value></data>
   <data name="Sort" xml:space="preserve"><value>مرتب‌سازی</value></data>
-  <data name="Price" xml:space="preserve"><value>قیمت</value></data>
-  <data name="Total" xml:space="preserve"><value>جمع کل</value></data>
-  <data name="Quantity" xml:space="preserve"><value>تعداد</value></data>
-  <data name="Products" xml:space="preserve"><value>محصولات</value></data>
   <data name="ContinueShopping" xml:space="preserve"><value>ادامهٔ خرید</value></data>
   <data name="AddToCart" xml:space="preserve"><value>افزودن به سبد خرید</value></data>
   <data name="Remove" xml:space="preserve"><value>حذف</value></data>
-  <data name="InCart" xml:space="preserve"><value>در سبد شما</value></data>
-  <data name="EmptyCart" xml:space="preserve"><value>سبد خرید شما خالی است</value></data>
   <data name="StartShopping" xml:space="preserve"><value>شروع خرید</value></data>
   <data name="CatalogTitle" xml:space="preserve"><value>آمادهٔ یک ماجراجویی جدید هستید؟</value></data>
-  <data name="CatalogSubtitle" xml:space="preserve"><value>فصل را با جدیدترین پوشاک و تجهیزات آغاز کنید.</value></data>
+  <data name="CatalogSubtitle" xml:space="preserve"><value>فصل را با تازه‌ترین پوشاک و تجهیزات آغاز کنید.</value></data>
   <data name="NoProducts" xml:space="preserve"><value>محصولی با این فیلترها یافت نشد</value></data>
-  <data name="NoProductsHint" xml:space="preserve"><value>فیلتری را حذف کنید یا جستجو را از نو آغاز نمایید.</value></data>
+  <data name="NoProductsHint" xml:space="preserve"><value>یک فیلتر را بردارید یا از مجموعهٔ کامل دوباره شروع کنید.</value></data>
   <data name="ClearFilters" xml:space="preserve"><value>پاک‌کردن همهٔ فیلترها</value></data>
   <data name="ProductsCount" xml:space="preserve"><value>محصول</value></data>
   <data name="SortNameAsc" xml:space="preserve"><value>نام: الف تا ی</value></data>
@@ -92,11 +81,9 @@
   <data name="Cart_Products" xml:space="preserve"><value>محصولات</value></data>
   <data name="Cart_Quantity" xml:space="preserve"><value>تعداد</value></data>
   <data name="Cart_Total" xml:space="preserve"><value>مجموع</value></data>
-  <data name="Cart_TotalLabel" xml:space="preserve"><value>مجموع سبد</value></data>
-  <data name="Cart_Continue" xml:space="preserve"><value>ادامهٔ خرید</value></data>
+  <data name="Cart_TotalLabel" xml:space="preserve"><value>مجموع</value></data>
   <data name="Cart_Checkout" xml:space="preserve"><value>تسویه حساب</value></data>
   <data name="Cart_EmptyTitle" xml:space="preserve"><value>سبد خرید شما خالی است</value></data>
-  <data name="Cart_EmptyHint" xml:space="preserve"><value>کاتالوگ را مرور کنید و تجهیزات مورد علاقه‌تان را به سبد بیفزایید.</value></data>
   <data name="Checkout_ShippingAddress" xml:space="preserve"><value>نشانی ارسال</value></data>
   <data name="Checkout_Address" xml:space="preserve"><value>نشانی</value></data>
   <data name="Checkout_City" xml:space="preserve"><value>شهر</value></data>
@@ -105,7 +92,6 @@
   <data name="Checkout_Country" xml:space="preserve"><value>کشور</value></data>
   <data name="Checkout_BackToBag" xml:space="preserve"><value>بازگشت به سبد خرید</value></data>
   <data name="Checkout_PlaceOrder" xml:space="preserve"><value>ثبت سفارش</value></data>
-  <data name="Checkout_Required" xml:space="preserve"><value>این فیلد الزامی است</value></data>
   <data name="Item_Brand" xml:space="preserve"><value>برند</value></data>
   <data name="Item_BackToCatalog" xml:space="preserve"><value>بازگشت به کاتالوگ</value></data>
   <data name="Item_NotFound" xml:space="preserve"><value>متأسفانه چنین محصولی یافت نشد.</value></data>
@@ -116,20 +102,90 @@
   <data name="Orders_Status" xml:space="preserve"><value>وضعیت</value></data>
   <data name="Orders_NoOrders" xml:space="preserve"><value>هنوز سفارشی ثبت نکرده‌اید</value></data>
   <data name="Orders_NoOrdersHint" xml:space="preserve"><value>هنگامی که سفارشی ثبت کنید، در اینجا با وضعیت و مبلغ آن نمایش داده می‌شود.</value></data>
-  <data name="Footer_Tagline" xml:space="preserve"><value>تجهیزاتی برای ماجراجویی بعدی شما، هرجا که باشد.</value></data>
+  <data name="Footer_Tagline" xml:space="preserve"><value>تجهیزاتی برای ماجراجویی بعدی شما، هر جا که باشد.</value></data>
   <data name="Footer_Shop" xml:space="preserve"><value>فروشگاه</value></data>
   <data name="Footer_Support" xml:space="preserve"><value>پشتیبانی</value></data>
   <data name="Footer_Company" xml:space="preserve"><value>شرکت</value></data>
   <data name="Footer_Rights" xml:space="preserve"><value>کلیهٔ حقوق محفوظ است.</value></data>
   <data name="Chatbot_Title" xml:space="preserve"><value>دستیار خرید</value></data>
-  <data name="Chatbot_Placeholder" xml:space="preserve"><value>دربارهٔ محصولات، سفارش‌ها یا پیشنهادها بپرسید...</value></data>
   <data name="Chatbot_Thinking" xml:space="preserve"><value>در حال فکر کردن...</value></data>
-  <data name="Chatbot_NotEnabled" xml:space="preserve"><value>دستیار فعال نیست</value></data>
-  <data name="Chatbot_NotEnabledHint" xml:space="preserve"><value>برای فعال‌سازی، Microsoft Foundry یا Ollama را روشن کنید.</value></data>
+  <data name="Chatbot_NotEnabled" xml:space="preserve"><value>دستیار فعال نشده است</value></data>
+  <data name="Chatbot_NotEnabledHint" xml:space="preserve"><value>برای فعال‌سازی، Microsoft Foundry را روشن کنید (UseFoundry=true در AppHost) یا Ollama را برای هوش مصنوعی محلی فعال کنید؛ سپس این پنل را دوباره باز کنید.</value></data>
   <data name="OrderStatus_Submitted" xml:space="preserve"><value>ثبت‌شده</value></data>
   <data name="OrderStatus_AwaitingValidation" xml:space="preserve"><value>در انتظار تأیید</value></data>
   <data name="OrderStatus_StockConfirmed" xml:space="preserve"><value>موجودی تأیید شد</value></data>
   <data name="OrderStatus_Paid" xml:space="preserve"><value>پرداخت‌شده</value></data>
   <data name="OrderStatus_Shipped" xml:space="preserve"><value>ارسال‌شده</value></data>
   <data name="OrderStatus_Cancelled" xml:space="preserve"><value>لغو شد</value></data>
+  <data name="BrandName" xml:space="preserve"><value>AdventureWorks</value></data>
+  <data name="Header_HomeAria" xml:space="preserve"><value>بازگشت به صفحهٔ اصلی AdventureWorks</value></data>
+  <data name="Header_PrimaryNavAria" xml:space="preserve"><value>منوی اصلی</value></data>
+  <data name="Nav_ShopAll" xml:space="preserve"><value>همهٔ محصولات</value></data>
+  <data name="Loading" xml:space="preserve"><value>در حال بارگذاری...</value></data>
+  <data name="Close" xml:space="preserve"><value>بستن</value></data>
+  <data name="Prev" xml:space="preserve"><value>قبلی</value></data>
+  <data name="Next" xml:space="preserve"><value>بعدی</value></data>
+  <data name="Error_Unhandled" xml:space="preserve"><value>خطایی رخ داد. لطفاً کمی بعد دوباره تلاش کنید.</value></data>
+  <data name="Error_Reload" xml:space="preserve"><value>تلاش دوباره</value></data>
+  <data name="Menu_Account" xml:space="preserve"><value>حساب کاربری</value></data>
+  <data name="Menu_SignIn" xml:space="preserve"><value>ورود به حساب</value></data>
+  <data name="Cart_PageTitle" xml:space="preserve"><value>سبد خرید | AdventureWorks</value></data>
+  <data name="Cart_IncreaseAria" xml:space="preserve"><value>افزایش تعداد {0}</value></data>
+  <data name="Cart_DecreaseAria" xml:space="preserve"><value>کاهش تعداد {0}</value></data>
+  <data name="Cart_QuantityAria" xml:space="preserve"><value>تعداد {0}</value></data>
+  <data name="Cart_RemoveAria" xml:space="preserve"><value>حذف {0} از سبد خرید</value></data>
+  <data name="Cart_Apply" xml:space="preserve"><value>ثبت تغییرات</value></data>
+  <data name="Cart_BrowseHint" xml:space="preserve"><value>کاتالوگ را مرور کنید و تجهیزاتی را که دوست دارید به سبد بیفزایید؛ هر چه اضافه کنید همین‌جا می‌بینید و آمادهٔ تسویه حساب است.</value></data>
+  <data name="Catalog_PageTitle" xml:space="preserve"><value>AdventureWorks | فروشگاه</value></data>
+  <data name="Catalog_LoadingAria" xml:space="preserve"><value>در حال بارگذاری محصولات</value></data>
+  <data name="Catalog_PagesAria" xml:space="preserve"><value>صفحه‌های کاتالوگ</value></data>
+  <data name="Catalog_PrevAria" xml:space="preserve"><value>صفحهٔ قبلی</value></data>
+  <data name="Catalog_NextAria" xml:space="preserve"><value>صفحهٔ بعدی</value></data>
+  <data name="Filters" xml:space="preserve"><value>فیلترها</value></data>
+  <data name="Filter_Brand" xml:space="preserve"><value>برند</value></data>
+  <data name="Filter_Type" xml:space="preserve"><value>دسته‌بندی</value></data>
+  <data name="Filter_All" xml:space="preserve"><value>همه</value></data>
+  <data name="Item_ZoomAria" xml:space="preserve"><value>بزرگ‌نمایی تصویر {0}</value></data>
+  <data name="Item_LightboxAria" xml:space="preserve"><value>تصویر بزرگ‌نمایی‌شدهٔ {0}</value></data>
+  <data name="Item_CloseImage" xml:space="preserve"><value>بستن تصویر</value></data>
+  <data name="Item_InYourBag" xml:space="preserve"><value>کالا در</value></data>
+  <data name="Item_AddToBagTitle" xml:space="preserve"><value>افزودن به سبد خرید</value></data>
+  <data name="Item_LoginTitle" xml:space="preserve"><value>برای خرید وارد حساب شوید</value></data>
+  <data name="Checkout_PageTitle" xml:space="preserve"><value>تسویه حساب | AdventureWorks</value></data>
+  <data name="Checkout_CartEmpty" xml:space="preserve"><value>سبد خرید شما خالی است</value></data>
+  <data name="Orders_PageTitle" xml:space="preserve"><value>سفارش‌ها | AdventureWorks</value></data>
+  <data name="Orders_Loading" xml:space="preserve"><value>در حال بارگذاری سفارش‌های شما...</value></data>
+  <data name="Orders_Total" xml:space="preserve"><value>مبلغ</value></data>
+  <data name="Chatbot_AriaLabel" xml:space="preserve"><value>دستیار خرید</value></data>
+  <data name="Chatbot_WideTitle" xml:space="preserve"><value>تغییر به نمای پهن</value></data>
+  <data name="Chatbot_CloseAria" xml:space="preserve"><value>بستن دستیار</value></data>
+  <data name="Chatbot_InputPlaceholder" xml:space="preserve"><value>دربارهٔ محصولات، سفارش‌ها یا پیشنهادها بپرسید...</value></data>
+  <data name="Chatbot_InputAria" xml:space="preserve"><value>پیام شما به دستیار خرید</value></data>
+  <data name="Chatbot_Send" xml:space="preserve"><value>ارسال</value></data>
+  <data name="Chatbot_SendAria" xml:space="preserve"><value>ارسال پیام</value></data>
+  <data name="Chatbot_Open" xml:space="preserve"><value>پرسیدن از دستیار خرید</value></data>
+  <data name="Footer_SocialAria" xml:space="preserve"><value>AdventureWorks در شبکه‌های اجتماعی</value></data>
+  <data name="Footer_Instagram" xml:space="preserve"><value>AdventureWorks در اینستاگرام (در تب جدید باز می‌شود)</value></data>
+  <data name="Footer_Facebook" xml:space="preserve"><value>AdventureWorks در فیسبوک (در تب جدید باز می‌شود)</value></data>
+  <data name="Footer_X" xml:space="preserve"><value>AdventureWorks در X (در تب جدید باز می‌شود)</value></data>
+  <data name="Footer_Youtube" xml:space="preserve"><value>AdventureWorks در یوتیوب (در تب جدید باز می‌شود)</value></data>
+  <data name="Footer_LegalAria" xml:space="preserve"><value>حقوقی</value></data>
+  <data name="Footer_NewArrivals" xml:space="preserve"><value>جدیدها</value></data>
+  <data name="Footer_GiftCards" xml:space="preserve"><value>کارت هدیه</value></data>
+  <data name="Footer_Help" xml:space="preserve"><value>مرکز پشتیبانی</value></data>
+  <data name="Footer_ShippingReturns" xml:space="preserve"><value>ارسال و بازگشت کالا</value></data>
+  <data name="Footer_TrackOrder" xml:space="preserve"><value>پیگیری سفارش</value></data>
+  <data name="Footer_SizeGuide" xml:space="preserve"><value>راهنمای سایز</value></data>
+  <data name="Footer_Contact" xml:space="preserve"><value>تماس با ما</value></data>
+  <data name="Footer_Story" xml:space="preserve"><value>دربارهٔ ما</value></data>
+  <data name="Footer_Careers" xml:space="preserve"><value>فرصت‌های شغلی</value></data>
+  <data name="Footer_Sustainability" xml:space="preserve"><value>پایداری</value></data>
+  <data name="Footer_StoreLocator" xml:space="preserve"><value>نشانی فروشگاه‌ها</value></data>
+  <data name="Footer_Press" xml:space="preserve"><value>رسانه و اخبار</value></data>
+  <data name="Footer_Privacy" xml:space="preserve"><value>حریم خصوصی</value></data>
+  <data name="Footer_Terms" xml:space="preserve"><value>شرایط استفاده</value></data>
+  <data name="Footer_Cookies" xml:space="preserve"><value>کوکی‌ها</value></data>
+  <data name="Cart_AriaCount" xml:space="preserve"><value>سبد خرید، {0} کالا</value></data>
+  <data name="Cart_SummaryHeader" xml:space="preserve"><value>سبد خرید شما</value></data>
+  <data name="Item_NotFoundHint" xml:space="preserve"><value>متأسفانه چنین محصولی پیدا نشد. ممکن است آدرس لینک درست نباشد.</value></data>
 </root>

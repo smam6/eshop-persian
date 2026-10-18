@@ -7,11 +7,11 @@
         <strong>@context.User.Identity?.Name</strong>
         <form method="post" action="logout">
             <AntiforgeryToken />
-            <button class="action" type="submit">Log out</button>
+            <button class="action" type="submit">خروج از سیستم</button>
         </form>
     </Authorized>
     <NotAuthorized>
-        <button class="action" @onclick="@LogIn">Log in</button>
+        <button class="action" @onclick="@LogIn">ورود به سیستم</button>
     </NotAuthorized>
 </AuthorizeView>
 

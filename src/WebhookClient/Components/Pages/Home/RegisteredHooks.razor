@@ -2,19 +2,19 @@
 
 @if (webhooks is null)
 {
-    <div class="grid-placeholder">Loading...</div>
+    <div class="grid-placeholder">در حال بارگذاری…</div>
 }
 else if (webhooks.Any())
 {
     <QuickGrid Items="@webhooks">
-        <PropertyColumn Sortable="@true" IsDefaultSortColumn="true" InitialSortDirection="@SortDirection.Descending" Title="Date" Property="@(hook => hook.Date)" />
-        <PropertyColumn Sortable="@true" Title="Destination" Property="@(hook => hook.DestUrl)" />
-        <PropertyColumn Sortable="@true" Title="Token" Property="@(hook => hook.Token)" />
+        <PropertyColumn Sortable="@true" IsDefaultSortColumn="true" InitialSortDirection="@SortDirection.Descending" Title="تاریخ" Property="@(hook => hook.Date)" />
+        <PropertyColumn Sortable="@true" Title="مقصد" Property="@(hook => hook.DestUrl)" />
+        <PropertyColumn Sortable="@true" Title="توکن" Property="@(hook => hook.Token)" />
     </QuickGrid>
 }
 else
 {
-    <div class="grid-placeholder">None registered</div>
+    <div class="grid-placeholder">موردی ثبت نشده است</div>
 }
 
 @code {

@@ -12,5 +12,5 @@ public class AccountOptions
     public static bool ShowLogoutPrompt = false;
     public static bool AutomaticRedirectAfterSignOut = true;
 
-    public static string InvalidCredentialsErrorMessage = "Invalid username or password";
+    public static string InvalidCredentialsErrorMessage = "نام کاربری یا گذرواژه نامعتبر است.";
 }

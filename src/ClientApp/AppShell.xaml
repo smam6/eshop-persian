@@ -41,12 +41,12 @@
 
     <TabBar Route="Main">
         <ShellContent
-            Title="CATALOG"
+            Title="محصولات"
             ContentTemplate="{DataTemplate views:CatalogView}"
             Icon="{StaticResource CatalogIconImageSource}"
             Route="Catalog" />
         <ShellContent
-            Title="MAP"
+            Title="نقشه"
             ContentTemplate="{DataTemplate views:MapView}"
             Icon="{StaticResource MapIconImageSource}"
             IsVisible="{OnPlatform Android=True,
@@ -55,7 +55,7 @@
                                    Default=False}"
             Route="Map" />
         <ShellContent
-            Title="ORDERS"
+            Title="سفارش‌ها"
             ContentTemplate="{DataTemplate views:ProfileView}"
             Icon="{StaticResource BasketIconImageSource}"
             Route="Profile" />

@@ -1,4 +1,4 @@
-@rendermode @(new InteractiveServerRenderMode(prerender: false))
+﻿@rendermode @(new InteractiveServerRenderMode(prerender: false))
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.Extensions.AI
 @using eShop.WebApp.Chatbot
@@ -9,14 +9,15 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject ILoggerFactory LoggerFactory
 @inject IServiceProvider ServiceProvider
+@inject IStringLocalizer<SharedResources> L
 
-<div class="floating-pane" id="chatbot-pane" role="dialog" aria-label="Shopping assistant">
+<div class="floating-pane" id="chatbot-pane" role="dialog" aria-label="@(L["Chatbot_AriaLabel"])">
     <header class="chatbot-header" data-chat-drag-handle>
         <span class="chatbot-title">
-            Shopping assistant
+            @L["Chatbot_Title"]
         </span>
         <div class="chatbot-header-actions">
-            <button type="button" class="chatbot-size" data-chat-size aria-pressed="false" title="Toggle wide view" aria-label="Toggle wide view">
+            <button type="button" class="chatbot-size" data-chat-size aria-pressed="false" title="@(L["Chatbot_WideTitle"])" aria-label="@(L["Chatbot_WideTitle"])">
                 <svg class="chatbot-size-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M8 8 4 12l4 4" />
                     <path d="m16 8 4 4-4 4" />
@@ -28,7 +29,7 @@
                     <path d="M9 12h6" />
                 </svg>
             </button>
-            <button type="button" class="chatbot-close" data-chat-close title="Close" aria-label="Close assistant">
+            <button type="button" class="chatbot-close" data-chat-close title="@(L["Close"])" aria-label="@(L["Chatbot_CloseAria"])">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
                 </svg>
@@ -57,20 +58,20 @@
                         <path d="M12 8h.01" />
                     </svg>
                 </span>
-                <p class="chatbot-notice-title">Assistant isn't switched on</p>
-                <p>Turn on Microsoft Foundry (<code>UseFoundry=true</code> in the AppHost) or enable Ollama for local AI, then reopen this panel.</p>
+                <p class="chatbot-notice-title">@L["Chatbot_NotEnabled"]</p>
+                <p>@L["Chatbot_NotEnabledHint"]</p>
             </div>
         }
 
         @if (thinking)
         {
-            <p class="thinking">Thinking...</p>
+            <p class="thinking">@L["Chatbot_Thinking"]</p>
         }
     </div>
 
     <form class="chatbot-input" @onsubmit="SendMessageAsync">
-        <textarea placeholder="Ask about products, orders or recommendations..." aria-label="Message to the shopping assistant" @ref="@textbox" @bind="messageToSend"></textarea>
-        <button type="submit" class="chatbot-send" title="Send" aria-label="Send message" disabled="@(chatState is null)">
+        <textarea placeholder="@(L["Chatbot_InputPlaceholder"])" aria-label="@(L["Chatbot_InputAria"])" @ref="@textbox" @bind="messageToSend"></textarea>
+        <button type="submit" class="chatbot-send" title="@(L["Chatbot_Send"])" aria-label="@(L["Chatbot_SendAria"])" disabled="@(chatState is null)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 19V5M5 12l7-7 7 7" />
             </svg>

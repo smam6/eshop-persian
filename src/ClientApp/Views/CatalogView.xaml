@@ -86,17 +86,17 @@
                         Grid.Row="1"
                         FontAttributes="Bold"
                         FontSize="{StaticResource ExtraBigSize}"
-                        Text="Ready for a new adventure?" />
+                        Text="برای یک ماجراجویی تازه آماده‌اید؟" />
                     <Label
                         Grid.Row="2"
                         FontSize="{StaticResource MediumSize}"
-                        Text="Start the season with the latest in clothing and equipment." />
+                        Text="فصل را با تازه‌ترین‌های پوشاک و تجهیزات آغاز کنید." />
                 </Grid>
             </CollectionView.Header>
             <CollectionView.EmptyView>
                 <Label
                     HorizontalOptions="Center"
-                    Text="NO PRODUCTS FOUND"
+                    Text="محصولی یافت نشد"
                     VerticalOptions="Center" />
             </CollectionView.EmptyView>
             <CollectionView.ItemsLayout>
@@ -177,7 +177,7 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                                 <BindableLayout.EmptyView>
-                                    <Label HorizontalOptions="Fill" Text="Loading" />
+                                    <Label HorizontalOptions="Fill" Text="در حال بارگذاری" />
                                 </BindableLayout.EmptyView>
                             </FlexLayout>
                             <Label FontAttributes="Bold" Style="{StaticResource MediumSizeFontStyle}">Types</Label>
@@ -207,18 +207,18 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                                 <BindableLayout.EmptyView>
-                                    <Label HorizontalOptions="Fill" Text="Loading" />
+                                    <Label HorizontalOptions="Fill" Text="در حال بارگذاری" />
                                 </BindableLayout.EmptyView>
                             </FlexLayout>
                             <HorizontalStackLayout HorizontalOptions="End">
                                 <Button
                                     Command="{Binding ClearFilterCommand}"
                                     Style="{StaticResource TransparentButtonStyle}"
-                                    Text="Clear" />
+                                    Text="پاک کردن" />
                                 <Button
                                     Command="{Binding ApplyFilterCommand}"
                                     CornerRadius="4"
-                                    Text="Apply" />
+                                    Text="اعمال" />
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                     </ScrollView>

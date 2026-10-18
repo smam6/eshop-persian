@@ -6,10 +6,13 @@ namespace IdentityServerHost.Quickstart.UI;
 
 public class LoginInputModel
 {
-    [Required]
+    [Required(ErrorMessage = "نام کاربری الزامی است.")]
+    [Display(Name = "نام کاربری")]
     public string Username { get; set; }
-    [Required]
+    [Required(ErrorMessage = "گذرواژه الزامی است.")]
+    [Display(Name = "گذرواژه")]
     public string Password { get; set; }
+    [Display(Name = "مرا به خاطر بسپار")]
     public bool RememberLogin { get; set; }
     public string ReturnUrl { get; set; }
 }

@@ -184,3 +184,22 @@ html[dir="rtl"] .rtl-flip,
 html[dir="rtl"] .rtl-flip :is(img, svg) {
     transform: scaleX(-1);
 }
+
+/* فلش «بازگشت/قبلی» که در طرح اصلی به چپ اشاره می‌کند، در RTL به قرینه می‌شود؛
+   و فلش «بعدی» (که با کلاس .flip از قبل قرینه بود) به حالت اول برمی‌گردد. */
+html[dir="rtl"] .item-back img,
+html[dir="rtl"] .cart-summary-link img,
+html[dir="rtl"] .form-buttons img,
+html[dir="rtl"] .page-nav img:not(.flip) {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .page-nav img.flip {
+    transform: none;
+}
+
+/* شمارنده/وضعیت صفحه: «۲ / ۵» در RTL همان ترتیب خوانایی عدد/عدد را نگه می‌دارد */
+html[dir="rtl"] .page-status {
+    direction: ltr;
+    unicode-bidi: embed;
+}

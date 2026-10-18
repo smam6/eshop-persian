@@ -37,7 +37,7 @@
                 BackgroundColor="Red"
                 Command="{Binding Source={RelativeSource AncestorType={x:Type vm:BasketViewModel}}, Path=DeleteCommand, x:DataType=vm:BasketViewModel}"
                 CommandParameter="{Binding}"
-                Text="Delete" />
+                Text="حذف" />
         </SwipeItems>
     </SwipeView.RightItems>
     <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackgroundColor}, Light={StaticResource LightBackgroundColor}}">
@@ -106,7 +106,7 @@
                 HorizontalOptions="Start"
                 IsVisible="{OnIdiom False,
                                     Desktop=True}"
-                Text="Delete" />
+                Text="حذف" />
         </Grid>
         <Grid
             Grid.Row="1"

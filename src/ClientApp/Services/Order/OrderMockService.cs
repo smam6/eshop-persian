@@ -11,13 +11,13 @@ public class OrderMockService : IOrderService
     private static readonly Address MockAdress = new()
     {
         Id = Guid.NewGuid(),
-        City = "Seattle, WA",
-        Street = "120 E 87th Street",
+        City = "تهران",
+        Street = "خیابان آزادی، پلاک ۱۲۳",
         CountryCode = "98122",
-        Country = "United States",
+        Country = "ایران",
         Latitude = 40.785091,
         Longitude = -73.968285,
-        State = "Seattle",
+        State = "تهران",
         StateCode = "WA",
         ZipCode = "98101"
     };
@@ -25,7 +25,7 @@ public class OrderMockService : IOrderService
     private static readonly PaymentInfo MockPaymentInfo = new()
     {
         Id = Guid.NewGuid(),
-        CardHolderName = "American Express",
+        CardHolderName = "امریکن اکسپرس",
         CardNumber = "XXXXXXXXXXXX0005",
         CardType = new CardType
         {
@@ -45,9 +45,9 @@ public class OrderMockService : IOrderService
             OrderId = Guid.NewGuid(),
             ProductId = Common.Common.MockCatalogItemId01,
             Discount = 15,
-            ProductName = ".NET Bot Blue Sweatshirt (M)",
+            ProductName = "سوییشرت آبی دات‌نت‌بات (سایز M)",
             Quantity = 1,
-            UnitPrice = 16.50M,
+            UnitPrice = 1650000M,
             PictureUrl = "fake_product_01.png"
         },
         new OrderItem
@@ -55,9 +55,9 @@ public class OrderMockService : IOrderService
             OrderId = Guid.NewGuid(),
             ProductId = Common.Common.MockCatalogItemId03,
             Discount = 0,
-            ProductName = ".NET Bot Black Sweatshirt (M)",
+            ProductName = "سوییشرت مشکی دات‌نت‌بات (سایز M)",
             Quantity = 2,
-            UnitPrice = 19.95M,
+            UnitPrice = 1995000M,
             PictureUrl = "fake_product_03.png"
         }
     };
@@ -65,14 +65,14 @@ public class OrderMockService : IOrderService
     private static readonly OrderCheckout MockOrderCheckout = new()
     {
         CardExpiration = DateTime.UtcNow,
-        CardHolderName = "FakeCardHolderName",
+        CardHolderName = "دارندهٔ کارت آزمایشی",
         CardNumber = "XXXXXXXXXXXX3224",
         CardSecurityNumber = "1234",
         CardTypeId = 1,
-        City = "FakeCity",
-        Country = "FakeCountry",
-        ZipCode = "FakeZipCode",
-        Street = "FakeStreet"
+        City = "تهران",
+        Country = "ایران",
+        ZipCode = "15987",
+        Street = "خیابان آزادی، پلاک ۱۲۳"
     };
 
     private readonly List<Models.Orders.Order> MockOrders = new()
@@ -82,7 +82,7 @@ public class OrderMockService : IOrderService
             OrderNumber = 1,
             SequenceNumber = 123,
             OrderDate = DateTime.Now,
-            OrderStatus = "Submitted",
+            OrderStatus = "ثبت‌شده",
             OrderItems = MockOrderItems,
             CardTypeId = MockPaymentInfo.CardType.Id,
             CardHolderName = MockPaymentInfo.CardHolderName,
@@ -93,14 +93,14 @@ public class OrderMockService : IOrderService
             ShippingState = MockAdress.State,
             ShippingCountry = MockAdress.Country,
             ShippingStreet = MockAdress.Street,
-            Total = 36.46M
+            Total = 3646000M
         },
         new Models.Orders.Order
         {
             OrderNumber = 2,
             SequenceNumber = 132,
             OrderDate = DateTime.Now,
-            OrderStatus = "Paid",
+            OrderStatus = "پرداخت‌شده",
             OrderItems = MockOrderItems,
             CardTypeId = MockPaymentInfo.CardType.Id,
             CardHolderName = MockPaymentInfo.CardHolderName,
@@ -111,14 +111,14 @@ public class OrderMockService : IOrderService
             ShippingState = MockAdress.State,
             ShippingCountry = MockAdress.Country,
             ShippingStreet = MockAdress.Street,
-            Total = 36.46M
+            Total = 3646000M
         },
         new Models.Orders.Order
         {
             OrderNumber = 3,
             SequenceNumber = 231,
             OrderDate = DateTime.Now,
-            OrderStatus = "Cancelled",
+            OrderStatus = "لغو‌شده",
             OrderItems = MockOrderItems,
             CardTypeId = MockPaymentInfo.CardType.Id,
             CardHolderName = MockPaymentInfo.CardHolderName,
@@ -129,14 +129,14 @@ public class OrderMockService : IOrderService
             ShippingState = MockAdress.State,
             ShippingCountry = MockAdress.Country,
             ShippingStreet = MockAdress.Street,
-            Total = 36.46M
+            Total = 3646000M
         },
         new Models.Orders.Order
         {
             OrderNumber = 4,
             SequenceNumber = 131,
             OrderDate = DateTime.Now,
-            OrderStatus = "Shipped",
+            OrderStatus = "ارسال‌شده",
             OrderItems = MockOrderItems,
             CardTypeId = MockPaymentInfo.CardType.Id,
             CardHolderName = MockPaymentInfo.CardHolderName,
@@ -147,7 +147,7 @@ public class OrderMockService : IOrderService
             ShippingState = MockAdress.State,
             ShippingCountry = MockAdress.Country,
             ShippingStreet = MockAdress.Street,
-            Total = 36.46M
+            Total = 3646000M
         }
     };
 

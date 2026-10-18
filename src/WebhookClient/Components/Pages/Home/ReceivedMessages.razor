@@ -3,22 +3,22 @@
 
 @if (messages is null)
 {
-    <div class="grid-placeholder">Loading...</div>
+    <div class="grid-placeholder">در حال بارگذاری…</div>
 }
 else if (messages.Any())
 {
     <QuickGrid Items="@messages">
-        <PropertyColumn Sortable="@true" Title="When" Property="@(hook => hook.When)" />
-        <PropertyColumn Sortable="@true" Title="Data" Property="@(hook => hook.Data)" />
-        <PropertyColumn Sortable="@true" Title="Token" Property="@(hook => hook.Token)" />
+        <PropertyColumn Sortable="@true" Title="زمان" Property="@(hook => hook.When)" />
+        <PropertyColumn Sortable="@true" Title="داده" Property="@(hook => hook.Data)" />
+        <PropertyColumn Sortable="@true" Title="توکن" Property="@(hook => hook.Token)" />
     </QuickGrid>
 }
 else
 {
     <div class="grid-placeholder">
-        <div>None yet received</div>
+        <div>هنوز پیامی دریافت نشده است</div>
     </div>
-    <p>Webhook messages will appear once a webhook is registered and an order transitions into "paid" status.</p>
+    <p>پیام‌های وب‌هوک پس از آن ظاهر می‌شوند که یک وب‌هوک ثبت شده و یک سفارش به وضعیت «پرداخت‌شده» منتقل شود.</p>
 }
 
 @code {

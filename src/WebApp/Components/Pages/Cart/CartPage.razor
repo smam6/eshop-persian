@@ -4,14 +4,16 @@
 @inject IProductImageUrlProvider ProductImages
 @attribute [StreamRendering]
 @attribute [Authorize]
+@inject IStringLocalizer<SharedResources> L
+@using System.Globalization
 
-<PageTitle>Shopping Bag | AdventureWorks</PageTitle>
-<SectionContent SectionName="page-header-title">Shopping bag</SectionContent>
+<PageTitle>@L["Cart_PageTitle"]</PageTitle>
+<SectionContent SectionName="page-header-title">@L["ShoppingBag"]</SectionContent>
 
 <div class='cart'>
     @if (basketItems is null)
     {
-        <p class="cart-empty">Loading...</p>
+        <p class="cart-empty">@L["Loading"]</p>
     }
     else if (basketItems.Count == 0)
     {
@@ -22,18 +24,18 @@
                     <path d="M18 16v-2a6 6 0 0 1 12 0v2" />
                 </svg>
             </span>
-            <h2>Your shopping bag is empty</h2>
-            <p>Browse the catalog and add the gear you love. Anything you add shows up here, ready to check out.</p>
-            <a class="button button-primary" href="/">Start shopping</a>
+            <h2>@L["Cart_EmptyTitle"]</h2>
+            <p>@L["Cart_BrowseHint"]</p>
+            <a class="button button-primary" href="/">@L["StartShopping"]</a>
         </div>
     }
     else
     {
         <div class='cart-items'>
             <div class='cart-item-header'>
-                <div class='catalog-item-info'>Products</div>
-                <div class='catalog-item-quantity'>Quantity</div>
-                <div class='catalog-item-total'>Total</div>
+                <div class='catalog-item-info'>@L["Cart_Products"]</div>
+                <div class='catalog-item-quantity'>@L["Cart_Quantity"]</div>
+                <div class='catalog-item-total'>@L["Cart_Total"]</div>
             </div>
             @foreach (var item in basketItems)
             {
@@ -51,27 +53,28 @@
                             <input type="hidden" name="_handler" value="update-cart" />
                             <AntiforgeryToken />
                             <input type="hidden" name="UpdateQuantityId" value="@item.ProductId" />
-                            <button type="submit" class="cart-quantity-apply" name="UpdateQuantityValue" value="@quantity" data-cart-quantity-apply tabindex="-1" aria-hidden="true">Apply</button>
+                            <button type="submit" class="cart-quantity-apply" name="UpdateQuantityValue" value="@quantity" data-cart-quantity-apply tabindex="-1" aria-hidden="true">@L["Cart_Apply"]</button>
 
                             <div class="quantity-stepper">
                                 <button type="submit" class="quantity-step" name="UpdateQuantityValue" value="@(quantity - 1)"
-                                        aria-label="Decrease quantity of @item.ProductName" disabled="@(quantity <= 1)">
+                                        aria-label="@(L["Cart_DecreaseAria", item.ProductName])" disabled="@(quantity <= 1)">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /></svg>
                                 </button>
+                                @* ورودی تعداد همیشه با ارقام لاتین است تا اعتبارسنجی مرورگر نشکند; نمایش فارسی در برچسب‌ها انجام می‌شود. *@
                                 <input class="quantity-value" type="number" min="1" inputmode="numeric"
-                                       value="@quantity" aria-label="Quantity of @item.ProductName" data-cart-quantity-input />
+                                       value="@quantity" aria-label="@(L["Cart_QuantityAria", item.ProductName])" data-cart-quantity-input />
                                 <button type="submit" class="quantity-step" name="UpdateQuantityValue" value="@(quantity + 1)"
-                                        aria-label="Increase quantity of @item.ProductName">
+                                        aria-label="@(L["Cart_IncreaseAria", item.ProductName])">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
                                 </button>
                             </div>
 
                             <button type="submit" class="cart-remove" name="UpdateQuantityValue" value="0"
-                                    aria-label="Remove @item.ProductName from your bag">
+                                    aria-label="@(L["Cart_RemoveAria", item.ProductName])">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="M4 7h16M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13" />
                                 </svg>
-                                <span>Remove</span>
+                                <span>@L["Remove"]</span>
                             </button>
                         </form>
                     </div>
@@ -87,17 +90,17 @@
             <div class="cart-summary-container">
                 <div class="cart-summary-header">
                     <img role="presentation" src="icons/cart.svg" />
-                    Your shopping bag
-                    <span class="filter-badge">@TotalQuantity</span>
+                    @L["Cart_SummaryHeader"]
+                    <span class="filter-badge">@PersianFormat.ToPersianDigits(TotalQuantity?.ToString(CultureInfo.InvariantCulture))</span>
                 </div>
                 <div class="cart-summary-total">
-                    <div>Total</div>
+                    <div>@L["Cart_TotalLabel"]</div>
                     <div>@TotalPrice?.ToPriceDisplay()</div>
                 </div>
-                <a href="checkout" class="button button-primary">Check out</a>
+                <a href="checkout" class="button button-primary">@L["Cart_Checkout"]</a>
                 <a href="" class="cart-summary-link">
                     <img role="presentation" src="icons/arrow-left.svg" />
-                    <p>Continue shopping</p>
+                    <p>@L["ContinueShopping"]</p>
                 </a>
             </div>
         </div>

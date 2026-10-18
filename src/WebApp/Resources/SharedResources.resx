@@ -58,32 +58,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <!-- Neutral (English) resources – culture fallback for fa-IR -->
-  <data name="AppName" xml:space="preserve"><value>AdventureWorks Online Store</value></data>
-  <data name="Home" xml:space="preserve"><value>Home</value></data>
   <data name="ShopAll" xml:space="preserve"><value>Shop all</value></data>
   <data name="ShoppingBag" xml:space="preserve"><value>Shopping bag</value></data>
   <data name="Checkout" xml:space="preserve"><value>Checkout</value></data>
   <data name="MyOrders" xml:space="preserve"><value>My orders</value></data>
-  <data name="Login" xml:space="preserve"><value>Log in</value></data>
   <data name="Logout" xml:space="preserve"><value>Log out</value></data>
-  <data name="Search" xml:space="preserve"><value>Search</value></data>
-  <data name="Filter" xml:space="preserve"><value>Filter</value></data>
   <data name="Sort" xml:space="preserve"><value>Sort by</value></data>
-  <data name="Price" xml:space="preserve"><value>Price</value></data>
-  <data name="Total" xml:space="preserve"><value>Total</value></data>
-  <data name="Quantity" xml:space="preserve"><value>Quantity</value></data>
-  <data name="Products" xml:space="preserve"><value>Products</value></data>
   <data name="ContinueShopping" xml:space="preserve"><value>Continue shopping</value></data>
-  <data name="AddToCart" xml:space="preserve"><value>Add to bag</value></data>
+  <data name="AddToCart" xml:space="preserve"><value>Add to shopping bag</value></data>
   <data name="Remove" xml:space="preserve"><value>Remove</value></data>
-  <data name="InCart" xml:space="preserve"><value>In cart</value></data>
-  <data name="EmptyCart" xml:space="preserve"><value>Your cart is empty</value></data>
   <data name="StartShopping" xml:space="preserve"><value>Start shopping</value></data>
   <data name="CatalogTitle" xml:space="preserve"><value>Ready for your next adventure?</value></data>
-  <data name="CatalogSubtitle" xml:space="preserve"><value>Gear up with the latest apparel and equipment.</value></data>
+  <data name="CatalogSubtitle" xml:space="preserve"><value>Start the season with the latest in clothing and equipment.</value></data>
   <data name="NoProducts" xml:space="preserve"><value>No products match these filters</value></data>
-  <data name="NoProductsHint" xml:space="preserve"><value>Remove a filter or start your search again.</value></data>
+  <data name="NoProductsHint" xml:space="preserve"><value>Try removing a filter, or start over with the full collection.</value></data>
   <data name="ClearFilters" xml:space="preserve"><value>Clear all filters</value></data>
   <data name="ProductsCount" xml:space="preserve"><value>products</value></data>
   <data name="SortNameAsc" xml:space="preserve"><value>Name: A to Z</value></data>
@@ -93,20 +81,17 @@
   <data name="Cart_Products" xml:space="preserve"><value>Products</value></data>
   <data name="Cart_Quantity" xml:space="preserve"><value>Quantity</value></data>
   <data name="Cart_Total" xml:space="preserve"><value>Total</value></data>
-  <data name="Cart_TotalLabel" xml:space="preserve"><value>Bag total</value></data>
-  <data name="Cart_Continue" xml:space="preserve"><value>Continue shopping</value></data>
+  <data name="Cart_TotalLabel" xml:space="preserve"><value>Total</value></data>
   <data name="Cart_Checkout" xml:space="preserve"><value>Checkout</value></data>
   <data name="Cart_EmptyTitle" xml:space="preserve"><value>Your bag is empty</value></data>
-  <data name="Cart_EmptyHint" xml:space="preserve"><value>Browse the catalog and add your favorite gear to the bag.</value></data>
   <data name="Checkout_ShippingAddress" xml:space="preserve"><value>Shipping address</value></data>
   <data name="Checkout_Address" xml:space="preserve"><value>Address</value></data>
   <data name="Checkout_City" xml:space="preserve"><value>City</value></data>
   <data name="Checkout_State" xml:space="preserve"><value>State</value></data>
   <data name="Checkout_ZipCode" xml:space="preserve"><value>Zip code</value></data>
   <data name="Checkout_Country" xml:space="preserve"><value>Country</value></data>
-  <data name="Checkout_BackToBag" xml:space="preserve"><value>Back to bag</value></data>
+  <data name="Checkout_BackToBag" xml:space="preserve"><value>Back to the shopping bag</value></data>
   <data name="Checkout_PlaceOrder" xml:space="preserve"><value>Place order</value></data>
-  <data name="Checkout_Required" xml:space="preserve"><value>This field is required</value></data>
   <data name="Item_Brand" xml:space="preserve"><value>Brand</value></data>
   <data name="Item_BackToCatalog" xml:space="preserve"><value>Back to catalog</value></data>
   <data name="Item_NotFound" xml:space="preserve"><value>Sorry, this product could not be found.</value></data>
@@ -117,15 +102,14 @@
   <data name="Orders_Status" xml:space="preserve"><value>Status</value></data>
   <data name="Orders_NoOrders" xml:space="preserve"><value>You haven't placed any orders yet</value></data>
   <data name="Orders_NoOrdersHint" xml:space="preserve"><value>When you do, they'll show up here with their status and amount.</value></data>
-  <data name="Footer_Tagline" xml:space="preserve"><value>Gear for your next adventure, wherever it takes you.</value></data>
+  <data name="Footer_Tagline" xml:space="preserve"><value>Gear built for the next adventure, wherever it takes you.</value></data>
   <data name="Footer_Shop" xml:space="preserve"><value>Shop</value></data>
   <data name="Footer_Support" xml:space="preserve"><value>Support</value></data>
   <data name="Footer_Company" xml:space="preserve"><value>Company</value></data>
   <data name="Footer_Rights" xml:space="preserve"><value>All rights reserved.</value></data>
   <data name="Chatbot_Title" xml:space="preserve"><value>Shopping assistant</value></data>
-  <data name="Chatbot_Placeholder" xml:space="preserve"><value>Ask about products, orders, or recommendations...</value></data>
   <data name="Chatbot_Thinking" xml:space="preserve"><value>Thinking...</value></data>
-  <data name="Chatbot_NotEnabled" xml:space="preserve"><value>Assistant is not enabled</value></data>
+  <data name="Chatbot_NotEnabled" xml:space="preserve"><value>Assistant isn't switched on</value></data>
   <data name="Chatbot_NotEnabledHint" xml:space="preserve"><value>Turn on Microsoft Foundry or Ollama to enable it.</value></data>
   <data name="OrderStatus_Submitted" xml:space="preserve"><value>Submitted</value></data>
   <data name="OrderStatus_AwaitingValidation" xml:space="preserve"><value>Awaiting validation</value></data>
@@ -133,4 +117,75 @@
   <data name="OrderStatus_Paid" xml:space="preserve"><value>Paid</value></data>
   <data name="OrderStatus_Shipped" xml:space="preserve"><value>Shipped</value></data>
   <data name="OrderStatus_Cancelled" xml:space="preserve"><value>Cancelled</value></data>
+  <data name="BrandName" xml:space="preserve"><value>AdventureWorks</value></data>
+  <data name="Header_HomeAria" xml:space="preserve"><value>AdventureWorks home</value></data>
+  <data name="Header_PrimaryNavAria" xml:space="preserve"><value>Primary</value></data>
+  <data name="Nav_ShopAll" xml:space="preserve"><value>Shop all</value></data>
+  <data name="Loading" xml:space="preserve"><value>Loading...</value></data>
+  <data name="Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Prev" xml:space="preserve"><value>Prev</value></data>
+  <data name="Next" xml:space="preserve"><value>Next</value></data>
+  <data name="Error_Unhandled" xml:space="preserve"><value>An unhandled error has occurred.</value></data>
+  <data name="Error_Reload" xml:space="preserve"><value>Reload</value></data>
+  <data name="Menu_Account" xml:space="preserve"><value>Account</value></data>
+  <data name="Menu_SignIn" xml:space="preserve"><value>Sign in</value></data>
+  <data name="Cart_PageTitle" xml:space="preserve"><value>Shopping bag | AdventureWorks</value></data>
+  <data name="Cart_IncreaseAria" xml:space="preserve"><value>Increase quantity of {0}</value></data>
+  <data name="Cart_DecreaseAria" xml:space="preserve"><value>Decrease quantity of {0}</value></data>
+  <data name="Cart_QuantityAria" xml:space="preserve"><value>Quantity of {0}</value></data>
+  <data name="Cart_RemoveAria" xml:space="preserve"><value>Remove {0} from your bag</value></data>
+  <data name="Cart_Apply" xml:space="preserve"><value>Apply</value></data>
+  <data name="Cart_BrowseHint" xml:space="preserve"><value>Browse the catalog and add the gear you love. Anything you add shows up here, ready to check out.</value></data>
+  <data name="Catalog_PageTitle" xml:space="preserve"><value>AdventureWorks</value></data>
+  <data name="Catalog_LoadingAria" xml:space="preserve"><value>Loading products</value></data>
+  <data name="Catalog_PagesAria" xml:space="preserve"><value>Catalog pages</value></data>
+  <data name="Catalog_PrevAria" xml:space="preserve"><value>Previous page</value></data>
+  <data name="Catalog_NextAria" xml:space="preserve"><value>Next page</value></data>
+  <data name="Filters" xml:space="preserve"><value>Filters</value></data>
+  <data name="Filter_Brand" xml:space="preserve"><value>Brand</value></data>
+  <data name="Filter_Type" xml:space="preserve"><value>Type</value></data>
+  <data name="Filter_All" xml:space="preserve"><value>All</value></data>
+  <data name="Item_ZoomAria" xml:space="preserve"><value>Zoom image of {0}</value></data>
+  <data name="Item_LightboxAria" xml:space="preserve"><value>Enlarged image of {0}</value></data>
+  <data name="Item_CloseImage" xml:space="preserve"><value>Close image</value></data>
+  <data name="Item_InYourBag" xml:space="preserve"><value>in your</value></data>
+  <data name="Item_AddToBagTitle" xml:space="preserve"><value>Add to basket</value></data>
+  <data name="Item_LoginTitle" xml:space="preserve"><value>Log in to purchase</value></data>
+  <data name="Checkout_PageTitle" xml:space="preserve"><value>Checkout | AdventureWorks</value></data>
+  <data name="Checkout_CartEmpty" xml:space="preserve"><value>Your cart is empty</value></data>
+  <data name="Orders_PageTitle" xml:space="preserve"><value>Orders | AdventureWorks</value></data>
+  <data name="Orders_Loading" xml:space="preserve"><value>Loading your orders...</value></data>
+  <data name="Orders_Total" xml:space="preserve"><value>Total</value></data>
+  <data name="Chatbot_AriaLabel" xml:space="preserve"><value>Shopping assistant</value></data>
+  <data name="Chatbot_WideTitle" xml:space="preserve"><value>Toggle wide view</value></data>
+  <data name="Chatbot_CloseAria" xml:space="preserve"><value>Close assistant</value></data>
+  <data name="Chatbot_InputPlaceholder" xml:space="preserve"><value>Ask about products, orders or recommendations...</value></data>
+  <data name="Chatbot_InputAria" xml:space="preserve"><value>Message to the shopping assistant</value></data>
+  <data name="Chatbot_Send" xml:space="preserve"><value>Send</value></data>
+  <data name="Chatbot_SendAria" xml:space="preserve"><value>Send message</value></data>
+  <data name="Chatbot_Open" xml:space="preserve"><value>Ask the assistant</value></data>
+  <data name="Footer_SocialAria" xml:space="preserve"><value>AdventureWorks on social media</value></data>
+  <data name="Footer_Instagram" xml:space="preserve"><value>AdventureWorks on Instagram (opens in a new tab)</value></data>
+  <data name="Footer_Facebook" xml:space="preserve"><value>AdventureWorks on Facebook (opens in a new tab)</value></data>
+  <data name="Footer_X" xml:space="preserve"><value>AdventureWorks on X (opens in a new tab)</value></data>
+  <data name="Footer_Youtube" xml:space="preserve"><value>AdventureWorks on YouTube (opens in a new tab)</value></data>
+  <data name="Footer_LegalAria" xml:space="preserve"><value>Legal</value></data>
+  <data name="Footer_NewArrivals" xml:space="preserve"><value>New arrivals</value></data>
+  <data name="Footer_GiftCards" xml:space="preserve"><value>Gift cards</value></data>
+  <data name="Footer_Help" xml:space="preserve"><value>Help center</value></data>
+  <data name="Footer_ShippingReturns" xml:space="preserve"><value>Shipping and returns</value></data>
+  <data name="Footer_TrackOrder" xml:space="preserve"><value>Track an order</value></data>
+  <data name="Footer_SizeGuide" xml:space="preserve"><value>Size guide</value></data>
+  <data name="Footer_Contact" xml:space="preserve"><value>Contact us</value></data>
+  <data name="Footer_Story" xml:space="preserve"><value>Our story</value></data>
+  <data name="Footer_Careers" xml:space="preserve"><value>Careers</value></data>
+  <data name="Footer_Sustainability" xml:space="preserve"><value>Sustainability</value></data>
+  <data name="Footer_StoreLocator" xml:space="preserve"><value>Store locator</value></data>
+  <data name="Footer_Press" xml:space="preserve"><value>Press</value></data>
+  <data name="Footer_Privacy" xml:space="preserve"><value>Privacy</value></data>
+  <data name="Footer_Terms" xml:space="preserve"><value>Terms</value></data>
+  <data name="Footer_Cookies" xml:space="preserve"><value>Cookies</value></data>
+  <data name="Cart_AriaCount" xml:space="preserve"><value>Shopping bag, {0} item(s)</value></data>
+  <data name="Cart_SummaryHeader" xml:space="preserve"><value>Your shopping bag</value></data>
+  <data name="Item_NotFoundHint" xml:space="preserve"><value>Sorry, we couldn't find any such product.</value></data>
 </root>

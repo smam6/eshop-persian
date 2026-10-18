@@ -4,16 +4,16 @@
 @inject NavigationManager Nav
 @inject WebhooksClient WebhooksClient
 
-<h2>Register a new webhook</h2>
+<h2>ثبت یک وب‌هوک جدید</h2>
 
-<p>This page registers the "OrderPaid" Webhook by sending a POST to the WebHooks API. Once the Webhook is set, you will be able to see new paid orders from the <a href="">home</a> page.</p>
+<p>این صفحه، وب‌هوکِ <span dir="ltr">OrderPaid</span> را با ارسال یک درخواست <span dir="ltr">POST</span> به <span dir="ltr">WebHooks API</span> ثبت می‌کند. پس از تنظیم وب‌هوک، می‌توانید سفارش‌های پرداختی جدید را در <a href="">صفحهٔ خانه</a> ببینید.</p>
 
 <form @onsubmit="RegisterAsync">
     <p>
-        Token:
-        <input type="text" @bind="@token" placeholder="Token" />
+        توکن:
+        <input type="text" @bind="@token" placeholder="توکن" />
     </p>
-    <button class="action" type="submit">Register</button>
+    <button class="action" type="submit">ثبت</button>
 </form>
 
 @if (!string.IsNullOrEmpty(message))
@@ -59,7 +59,7 @@
         }
         else
         {
-            message = $"Registation was rejected with status {(int)response.StatusCode} {response.ReasonPhrase}";
+            message = $"ثبت وب‌هوک رد شد؛ کد وضعیت {(int)response.StatusCode} {response.ReasonPhrase}";
         }
     }
 }
