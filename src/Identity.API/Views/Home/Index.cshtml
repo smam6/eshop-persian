@@ -1,0 +1,28 @@
+@using System.Diagnostics
+
+@{
+    var version = FileVersionInfo.GetVersionInfo(typeof(Duende.IdentityServer.Hosting.IdentityServerMiddleware).Assembly.Location).ProductVersion.Split('+').First();
+}
+
+<div class="welcome-page">
+    <h1>
+        <img src="~/icon.jpg">
+        به IdentityServer4 خوش آمدید
+        <small class="text-muted">(version @version)</small>
+    </h1>
+
+    <ul>
+        <li>
+            IdentityServer یک <a href="~/.well-known/openid-configuration">مستند اکتشاف</a> منتشر می‌کند که می‌توانید فراداده و پیوندِ همهٔ نقاط پایانی و مواد کلیدی را در آن بیابید.
+        </li>
+        <li>
+            برای دیدن ادعاهای (claims) نشست جاری خود <a href="~/diagnostics">اینجا</a> را کلیک کنید.
+        </li>
+        <li>
+            برای مدیریت دسترسی‌های ذخیره‌شده <a href="~/grants">اینجا</a> را کلیک کنید.
+        </li>
+        <li>
+            پیوندهای <a href="https://github.com/identityserver/IdentityServer4">مخزن کد منبع</a> و <a href="https://github.com/IdentityServer/IdentityServer4/tree/main/samples">نمونه‌های آمادهٔ استفاده</a> در زیر آمده‌اند.
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,22 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.Authorization
+
+<PageTitle>مدیریت سفارش‌ها</PageTitle>
+
+<h2>وب‌هوک‌های ثبت‌شده</h2>
+
+<AuthorizeView>
+    <Authorized>
+        <RegisteredHooks />
+        <a class="action" href="add-webhook">افزودن ثبت وب‌هوک</a>
+    </Authorized>
+    <NotAuthorized>
+        <div class="grid-placeholder">
+            برای دیدن یا ویرایش ثبت‌های وب‌هوک، وارد سیستم شوید
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+<h2>پیام‌های دریافتی وب‌هوک (سفارش‌های پرداختی)</h2>
+
+<ReceivedMessages />

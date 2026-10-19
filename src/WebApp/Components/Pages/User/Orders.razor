@@ -1,0 +1,95 @@
+﻿@page "/user/orders"
+@using System.Globalization
+@attribute [Authorize]
+@attribute [StreamRendering]
+@inject OrderingService OrderingService
+@inject IStringLocalizer<SharedResources> L
+
+<PageTitle>@L["Orders_PageTitle"]</PageTitle>
+<SectionContent SectionName="page-header-title">@L["Orders_Title"]</SectionContent>
+<OrdersRefreshOnStatusChange />
+
+<div class="orders">
+@if (orders is null)
+{
+    <p class="orders-loading" role="status">@L["Orders_Loading"]</p>
+}
+else if (orders.Length == 0)
+{
+    <div class="orders-empty">
+        <span class="orders-empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 16h24l-2 22H14z" />
+                <path d="M18 16v-2a6 6 0 0 1 12 0v2" />
+            </svg>
+        </span>
+        <h2>@L["Orders_NoOrders"]</h2>
+        <p>@L["Orders_NoOrdersHint"]</p>
+        <a class="button button-primary" href="/">@L["StartShopping"]</a>
+    </div>
+}
+else
+{
+    <ul class="orders-list">
+        <li class="orders-header orders-item">
+            <div>@L["Orders_Number"]</div>
+            <div>@L["Orders_Date"]</div>
+            <div class="total-header">@L["Orders_Total"]</div>
+            <div>@L["Orders_Status"]</div>
+        </li>
+        @foreach (var order in orders)
+        {
+            <li class="orders-item">
+                <div class="order-number">
+                    @* فقط نمایش: خودِ شمارهٔ سفارش در سرویس همان عدد میلادی است *@
+                    @FormatOrderNumber(order.OrderNumber)
+                </div>
+                <div class="order-date">
+                    @* تقویم هجری شمسی + ارقام فارسی؛ در فرهنگ en-US قالب پیش‌فرض فرهنگ *@
+                    @PersianFormat.FormatDate(order.Date)
+                    <span class="order-date-relative">@order.Date.ToPersianRelativeDays()</span>
+                </div>
+                <div class="order-total">
+                   @order.Total.ToPriceDisplay()
+                </div>
+                <div class="order-status">
+                    <span class="status @order.Status.ToLower()">
+                        @StatusText(order.Status)
+                    </span>
+                </div>
+            </li>
+        }
+    </ul>
+}
+</div>
+
+@code {
+    private OrderRecord[]? orders;
+
+    protected override async Task OnInitializedAsync()
+    {
+        orders = await OrderingService.GetOrders();
+    }
+
+    // شمارهٔ سفارش یک عدد فنی است؛ فقط رقم‌هایش برای خوانایی فارسی تبدیل می‌شود.
+    // وضعیت سفارش از سرویس Ordering به‌صورت نام انگلیسی وضعیت می‌آید؛
+    // برچسب فارسی از منابع خوانده می‌شود و اگر کلیدی نداشت، همان مقدار نمایش داده می‌شود.
+    private string StatusText(string status)
+    {
+        var key = status.ToLowerInvariant() switch
+        {
+            "submitted" => "OrderStatus_Submitted",
+            "awaitingvalidation" => "OrderStatus_AwaitingValidation",
+            "stockconfirmed" => "OrderStatus_StockConfirmed",
+            "paid" => "OrderStatus_Paid",
+            "shipped" => "OrderStatus_Shipped",
+            "cancelled" => "OrderStatus_Cancelled",
+            _ => null
+        };
+
+        return key is null ? status : L[key];
+    }
+
+    private static string FormatOrderNumber(int orderNumber)
+        => PersianFormat.ToPersianDigits(orderNumber.ToString(CultureInfo.InvariantCulture));
+}

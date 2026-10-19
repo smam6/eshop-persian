@@ -1,0 +1,98 @@
+/* ==========================================================================
+   rtl.css — لایهٔ راست‌به‌چپ و تایپوگرافی فارسی (کلاینت HybridApp/MAUI)
+   --------------------------------------------------------------------------
+   همان رویهٔ WebApp: فایل‌های *.razor.css این کلاینت به ویژگی‌های منطقی
+   (margin-inline-end، inset-inline-start، …) تبدیل شده‌اند تا چیدمان خودکار
+   قرینه شود؛ این فایل فقط فونت، تایپوگرافی و قواعد عدد/فرم را اضافه می‌کند.
+   ========================================================================== */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/vazirmatn/Vazirmatn-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/vazirmatn/Vazirmatn-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/vazirmatn/Vazirmatn-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Vazirmatn';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/vazirmatn/Vazirmatn-Bold.woff2') format('woff2');
+}
+
+:root {
+    --font-family-fa: 'Plus Jakarta Sans', 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+}
+
+html[dir="rtl"] body {
+    font-family: var(--font-family-fa);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    letter-spacing: normal;
+}
+
+/* letter-spacing اتصال حروف فارسی را می‌شکند؛ uppercase هم برای خط فارسی بی‌اثر است */
+html[dir="rtl"] :is(h1, h2, h3, h4, p, a, li, span, label, button, td, th) {
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+html[dir="rtl"] :is(h1, h2, h3) {
+    line-height: 1.55;
+}
+
+/* قیمت‌ها و اعداد: هم‌عرض و بدون شکستن خط */
+html[dir="rtl"] :is(.price, .money, .catalog-item-content .price) {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    unicode-bidi: isolate;
+}
+
+html[dir="rtl"] :is(code, kbd) {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+/* فرم‌ها */
+html[dir="rtl"] :is(input, textarea, select) {
+    text-align: start;
+}
+
+html[dir="rtl"] :is(input[type="email"], input[type="tel"], input[type="number"], input[type="date"]) {
+    direction: ltr;
+    text-align: left;
+}
+
+html[dir="rtl"] table :is(th, td) {
+    text-align: start;
+}
+
+/* آیکون‌های جهت‌دار: با کلاس .rtl-flip قرینه می‌شوند */
+html[dir="rtl"] .rtl-flip,
+html[dir="rtl"] .rtl-flip :is(img, svg) {
+    transform: scaleX(-1);
+}
+
+/* نوار وضعیت/امن iOS در چیدمان RTL هم بدون تغییر می‌ماند */
+.status-bar-safe-area {
+    direction: ltr;
+}

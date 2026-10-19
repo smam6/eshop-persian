@@ -1,0 +1,187 @@
+using eShop.ClientApp.Models.Basket;
+using eShop.ClientApp.Models.Orders;
+using eShop.ClientApp.Models.User;
+
+namespace eShop.ClientApp.Services.Order;
+
+public class OrderMockService : IOrderService
+{
+    private static readonly DateTime MockExpirationDate = DateTime.Now.AddYears(5);
+
+    private static readonly Address MockAdress = new()
+    {
+        Id = Guid.NewGuid(),
+        City = "تهران",
+        Street = "خیابان آزادی، پلاک ۱۲۳",
+        CountryCode = "98122",
+        Country = "ایران",
+        Latitude = 40.785091,
+        Longitude = -73.968285,
+        State = "تهران",
+        StateCode = "WA",
+        ZipCode = "98101"
+    };
+
+    private static readonly PaymentInfo MockPaymentInfo = new()
+    {
+        Id = Guid.NewGuid(),
+        CardHolderName = "امریکن اکسپرس",
+        CardNumber = "XXXXXXXXXXXX0005",
+        CardType = new CardType
+        {
+            Id = 3,
+            Name = "MasterCard"
+        },
+        Expiration = MockExpirationDate.ToString(),
+        ExpirationMonth = MockExpirationDate.Month,
+        ExpirationYear = MockExpirationDate.Year,
+        SecurityNumber = "123"
+    };
+
+    private static readonly List<OrderItem> MockOrderItems = new()
+    {
+        new OrderItem
+        {
+            OrderId = Guid.NewGuid(),
+            ProductId = Common.Common.MockCatalogItemId01,
+            Discount = 15,
+            ProductName = "سوییشرت آبی دات‌نت‌بات (سایز M)",
+            Quantity = 1,
+            UnitPrice = 1650000M,
+            PictureUrl = "fake_product_01.png"
+        },
+        new OrderItem
+        {
+            OrderId = Guid.NewGuid(),
+            ProductId = Common.Common.MockCatalogItemId03,
+            Discount = 0,
+            ProductName = "سوییشرت مشکی دات‌نت‌بات (سایز M)",
+            Quantity = 2,
+            UnitPrice = 1995000M,
+            PictureUrl = "fake_product_03.png"
+        }
+    };
+
+    private static readonly OrderCheckout MockOrderCheckout = new()
+    {
+        CardExpiration = DateTime.UtcNow,
+        CardHolderName = "دارندهٔ کارت آزمایشی",
+        CardNumber = "XXXXXXXXXXXX3224",
+        CardSecurityNumber = "1234",
+        CardTypeId = 1,
+        City = "تهران",
+        Country = "ایران",
+        ZipCode = "15987",
+        Street = "خیابان آزادی، پلاک ۱۲۳"
+    };
+
+    private readonly List<Models.Orders.Order> MockOrders = new()
+    {
+        new Models.Orders.Order
+        {
+            OrderNumber = 1,
+            SequenceNumber = 123,
+            OrderDate = DateTime.Now,
+            OrderStatus = "ثبت‌شده",
+            OrderItems = MockOrderItems,
+            CardTypeId = MockPaymentInfo.CardType.Id,
+            CardHolderName = MockPaymentInfo.CardHolderName,
+            CardNumber = MockPaymentInfo.CardNumber,
+            CardSecurityNumber = MockPaymentInfo.SecurityNumber,
+            CardExpiration = new DateTime(MockPaymentInfo.ExpirationYear, MockPaymentInfo.ExpirationMonth, 1),
+            ShippingCity = MockAdress.City,
+            ShippingState = MockAdress.State,
+            ShippingCountry = MockAdress.Country,
+            ShippingStreet = MockAdress.Street,
+            Total = 3646000M
+        },
+        new Models.Orders.Order
+        {
+            OrderNumber = 2,
+            SequenceNumber = 132,
+            OrderDate = DateTime.Now,
+            OrderStatus = "پرداخت‌شده",
+            OrderItems = MockOrderItems,
+            CardTypeId = MockPaymentInfo.CardType.Id,
+            CardHolderName = MockPaymentInfo.CardHolderName,
+            CardNumber = MockPaymentInfo.CardNumber,
+            CardSecurityNumber = MockPaymentInfo.SecurityNumber,
+            CardExpiration = new DateTime(MockPaymentInfo.ExpirationYear, MockPaymentInfo.ExpirationMonth, 1),
+            ShippingCity = MockAdress.City,
+            ShippingState = MockAdress.State,
+            ShippingCountry = MockAdress.Country,
+            ShippingStreet = MockAdress.Street,
+            Total = 3646000M
+        },
+        new Models.Orders.Order
+        {
+            OrderNumber = 3,
+            SequenceNumber = 231,
+            OrderDate = DateTime.Now,
+            OrderStatus = "لغو‌شده",
+            OrderItems = MockOrderItems,
+            CardTypeId = MockPaymentInfo.CardType.Id,
+            CardHolderName = MockPaymentInfo.CardHolderName,
+            CardNumber = MockPaymentInfo.CardNumber,
+            CardSecurityNumber = MockPaymentInfo.SecurityNumber,
+            CardExpiration = new DateTime(MockPaymentInfo.ExpirationYear, MockPaymentInfo.ExpirationMonth, 1),
+            ShippingCity = MockAdress.City,
+            ShippingState = MockAdress.State,
+            ShippingCountry = MockAdress.Country,
+            ShippingStreet = MockAdress.Street,
+            Total = 3646000M
+        },
+        new Models.Orders.Order
+        {
+            OrderNumber = 4,
+            SequenceNumber = 131,
+            OrderDate = DateTime.Now,
+            OrderStatus = "ارسال‌شده",
+            OrderItems = MockOrderItems,
+            CardTypeId = MockPaymentInfo.CardType.Id,
+            CardHolderName = MockPaymentInfo.CardHolderName,
+            CardNumber = MockPaymentInfo.CardNumber,
+            CardSecurityNumber = MockPaymentInfo.SecurityNumber,
+            CardExpiration = new DateTime(MockPaymentInfo.ExpirationYear, MockPaymentInfo.ExpirationMonth, 1),
+            ShippingCity = MockAdress.City,
+            ShippingState = MockAdress.State,
+            ShippingCountry = MockAdress.Country,
+            ShippingStreet = MockAdress.Street,
+            Total = 3646000M
+        }
+    };
+
+    public async Task<IEnumerable<Models.Orders.Order>> GetOrdersAsync()
+    {
+        await Task.Delay(10);
+
+        return MockOrders
+            .OrderByDescending(o => o.OrderNumber)
+            .ToArray();
+    }
+
+    public async Task<Models.Orders.Order> GetOrderAsync(int orderId)
+    {
+        await Task.Delay(10);
+
+        return MockOrders
+            .FirstOrDefault(o => o.OrderNumber.Equals(orderId));
+    }
+
+    public async Task CreateOrderAsync(Models.Orders.Order newOrder)
+    {
+        await Task.Delay(10);
+
+        MockOrders.Add(newOrder);
+    }
+
+    public OrderCheckout MapOrderToBasket(Models.Orders.Order order)
+    {
+        return MockOrderCheckout;
+    }
+
+    public Task<bool> CancelOrderAsync(int orderId)
+    {
+        return Task.FromResult(true);
+    }
+}

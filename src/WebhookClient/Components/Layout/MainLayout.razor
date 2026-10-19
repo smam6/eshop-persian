@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+<header>
+    <h1><a href="">مدیریت سفارش‌ها</a></h1>
+    <div class="user-info">
+        <UserMenu />
+    </div>
+</header>
+
+@* ریشهٔ محتوا صریحاً RTL است تا چیدمان حتی در صورت رندر بیرون از قالب هم درست بماند *@
+<main dir="rtl">@Body</main>
+
+<div id="blazor-error-ui">
+    خطای مدیریت‌نشده‌ای رخ داد.
+    <a href="" class="reload">بارگذاری مجدد</a>
+    <a class="dismiss">🗙</a>
+</div>

@@ -1,0 +1,11 @@
+@model RedirectViewModel
+
+<div class="redirect-page">
+    <div class="lead">
+        <h1>اکنون به کاربرد خود بازمی‌گردید</h1>
+        <p>پس از تکمیل، می‌توانید این زبانه را ببندید.</p>
+    </div>
+</div>
+
+<meta http-equiv="refresh" content="0;url=@Model.RedirectUrl" data-url="@Model.RedirectUrl">
+<script src="~/js/signin-redirect.js"></script>

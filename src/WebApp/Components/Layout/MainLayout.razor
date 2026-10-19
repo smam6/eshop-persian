@@ -1,0 +1,18 @@
+﻿@inherits LayoutComponentBase
+@using eShop.WebApp.Components.Chatbot
+@inject IStringLocalizer<SharedResources> L
+
+<HeaderBar />
+@* جهت راست‌به‌چپ روی ریشهٔ محتوا هم تکرار می‌شود تا محتوای اجزای
+   تعاملی (و هر محتوایی که بیرون از قالب رندر شود) RTL بماند. *@
+<main class="eshop-main" dir="rtl">
+    @Body
+</main>
+<FooterBar />
+<ShowChatbotButton />
+
+<div id="blazor-error-ui">
+    @L["Error_Unhandled"]
+    <a href="" class="reload">@L["Error_Reload"]</a>
+    <a class="dismiss">🗙</a>
+</div>
