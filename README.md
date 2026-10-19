@@ -1,5 +1,7 @@
 # eShop Reference Application - "AdventureWorks"
 
+> 🇮🇷 **[نسخهٔ فارسی / Persian README](README-fa.md)** — این نمونه به‌طور کامل فارسی و راست‌به‌چپ شده است.
+
 A reference .NET application implementing an e-commerce website using a services-based architecture with [Aspire](https://aspire.dev/).
 
 ![eShop Reference Application architecture diagram](img/eshop_architecture.png)
