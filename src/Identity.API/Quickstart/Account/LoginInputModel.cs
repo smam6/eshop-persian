@@ -2,17 +2,21 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using Identity.API.Resources;
+
 namespace IdentityServerHost.Quickstart.UI;
 
 public class LoginInputModel
 {
-    [Required(ErrorMessage = "نام کاربری الزامی است.")]
-    [Display(Name = "نام کاربری")]
+    // پیام/برچسب از منابع AccountResources (fa-IR + neutral) خوانده می‌شود تا
+    // با ?culture=en-US پیام انگلیسی درست برگردد.
+    [Display(ResourceType = typeof(AccountResources), Name = nameof(AccountResources.Label_Username))]
+    [Required(ErrorMessageResourceType = typeof(AccountResources), ErrorMessageResourceName = nameof(AccountResources.Validation_UsernameRequired))]
     public string Username { get; set; }
-    [Required(ErrorMessage = "گذرواژه الزامی است.")]
-    [Display(Name = "گذرواژه")]
+    [Display(ResourceType = typeof(AccountResources), Name = nameof(AccountResources.Label_Password))]
+    [Required(ErrorMessageResourceType = typeof(AccountResources), ErrorMessageResourceName = nameof(AccountResources.Validation_PasswordRequired))]
     public string Password { get; set; }
-    [Display(Name = "مرا به خاطر بسپار")]
+    [Display(ResourceType = typeof(AccountResources), Name = nameof(AccountResources.Label_RememberLogin))]
     public bool RememberLogin { get; set; }
     public string ReturnUrl { get; set; }
 }

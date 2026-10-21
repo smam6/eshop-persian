@@ -1,27 +1,30 @@
 using System.ComponentModel.DataAnnotations;
+using eShop.WebApp.Resources;
 
 namespace eShop.WebApp.Services;
 
 public class BasketCheckoutInfo
 {
-    [Required(ErrorMessage = "وارد کردن نشانی الزامی است.")]
-    [Display(Name = "نشانی")]
+    // راستی‌آزمایی/برچسب‌ها از منابع SharedResources (neutral + fa-IR) خوانده می‌شوند
+    // تا با فرهنگ en-US هم پیام درست (انگلیسی) برگردد.
+    [Display(ResourceType = typeof(SharedResources), Name = nameof(SharedResources.Label_Street))]
+    [Required(ErrorMessageResourceType = typeof(SharedResources), ErrorMessageResourceName = nameof(SharedResources.Validation_StreetRequired))]
     public string? Street { get; set; }
 
-    [Required(ErrorMessage = "وارد کردن شهر الزامی است.")]
-    [Display(Name = "شهر")]
+    [Display(ResourceType = typeof(SharedResources), Name = nameof(SharedResources.Label_City))]
+    [Required(ErrorMessageResourceType = typeof(SharedResources), ErrorMessageResourceName = nameof(SharedResources.Validation_CityRequired))]
     public string? City { get; set; }
 
-    [Required(ErrorMessage = "وارد کردن استان الزامی است.")]
-    [Display(Name = "استان")]
+    [Display(ResourceType = typeof(SharedResources), Name = nameof(SharedResources.Label_State))]
+    [Required(ErrorMessageResourceType = typeof(SharedResources), ErrorMessageResourceName = nameof(SharedResources.Validation_StateRequired))]
     public string? State { get; set; }
 
-    [Required(ErrorMessage = "وارد کردن کشور الزامی است.")]
-    [Display(Name = "کشور")]
+    [Display(ResourceType = typeof(SharedResources), Name = nameof(SharedResources.Label_Country))]
+    [Required(ErrorMessageResourceType = typeof(SharedResources), ErrorMessageResourceName = nameof(SharedResources.Validation_CountryRequired))]
     public string? Country { get; set; }
 
-    [Required(ErrorMessage = "وارد کردن کد پستی الزامی است.")]
-    [Display(Name = "کد پستی")]
+    [Display(ResourceType = typeof(SharedResources), Name = nameof(SharedResources.Label_ZipCode))]
+    [Required(ErrorMessageResourceType = typeof(SharedResources), ErrorMessageResourceName = nameof(SharedResources.Validation_ZipCodeRequired))]
     public string? ZipCode { get; set; }
 
     public string? CardNumber { get; set; }

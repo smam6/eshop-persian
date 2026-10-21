@@ -1,5 +1,7 @@
 using eShop.WebAppComponents.Services;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using eShop.WebApp.Resources;
 using Microsoft.Extensions.Options;
 
 namespace eShop.WebApp.Extensions;
@@ -33,7 +35,12 @@ public static class LocalizationExtensions
         // اعتبارسنجی هم از منابع فارسی خوانده شود.
         builder.Services.AddControllersWithViews()
             .AddViewLocalization()
-            .AddDataAnnotationsLocalization();
+            .AddDataAnnotationsLocalization(options =>
+            {
+                // پیام‌های DataAnnotations و برچسب‌های مدل (BasketCheckoutInfo و …)
+                // از همان منابع SharedResources خوانده شوند.
+                options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResources));
+            });
 
         builder.Services.AddRazorPages();
 

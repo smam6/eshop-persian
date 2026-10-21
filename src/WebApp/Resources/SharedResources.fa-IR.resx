@@ -188,4 +188,14 @@
   <data name="Cart_AriaCount" xml:space="preserve"><value>سبد خرید، {0} کالا</value></data>
   <data name="Cart_SummaryHeader" xml:space="preserve"><value>سبد خرید شما</value></data>
   <data name="Item_NotFoundHint" xml:space="preserve"><value>متأسفانه چنین محصولی پیدا نشد. ممکن است آدرس لینک درست نباشد.</value></data>
+  <data name="Validation_StreetRequired" xml:space="preserve"><value>خیابان الزامی است.</value></data>
+  <data name="Validation_CityRequired" xml:space="preserve"><value>شهر الزامی است.</value></data>
+  <data name="Validation_StateRequired" xml:space="preserve"><value>استان الزامی است.</value></data>
+  <data name="Validation_CountryRequired" xml:space="preserve"><value>کشور الزامی است.</value></data>
+  <data name="Validation_ZipCodeRequired" xml:space="preserve"><value>کد پستی الزامی است.</value></data>
+  <data name="Label_Street" xml:space="preserve"><value>خیابان</value></data>
+  <data name="Label_City" xml:space="preserve"><value>شهر</value></data>
+  <data name="Label_State" xml:space="preserve"><value>استان</value></data>
+  <data name="Label_Country" xml:space="preserve"><value>کشور</value></data>
+  <data name="Label_ZipCode" xml:space="preserve"><value>کد پستی</value></data>
 </root>
