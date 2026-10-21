@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
+using Basket.API.Resources;
+using Microsoft.Extensions.Localization;
 using eShop.Basket.API.Repositories;
 using eShop.Basket.API.Extensions;
 using eShop.Basket.API.Model;
@@ -7,7 +9,8 @@ namespace eShop.Basket.API.Grpc;
 
 public class BasketService(
     IBasketRepository repository,
-    ILogger<BasketService> logger) : Basket.BasketBase
+    ILogger<BasketService> logger,
+    IStringLocalizer<BasketApiResources> localizer) : Basket.BasketBase
 {
     [AllowAnonymous]
     public override async Task<CustomerBasketResponse> GetBasket(GetBasketRequest request, ServerCallContext context)
@@ -69,10 +72,10 @@ public class BasketService(
     }
 
     [DoesNotReturn]
-    private static void ThrowNotAuthenticated() => throw new RpcException(new Status(StatusCode.Unauthenticated, "The caller is not authenticated."));
+    private void ThrowNotAuthenticated() => throw new RpcException(new Status(StatusCode.Unauthenticated, localizer[nameof(BasketApiResources.NotAuthenticated)]));
 
     [DoesNotReturn]
-    private static void ThrowBasketDoesNotExist(string userId) => throw new RpcException(new Status(StatusCode.NotFound, $"Basket with buyer id {userId} does not exist"));
+    private void ThrowBasketDoesNotExist(string userId) => throw new RpcException(new Status(StatusCode.NotFound, string.Format(localizer[nameof(BasketApiResources.BasketDoesNotExist)], userId)));
 
     private static CustomerBasketResponse MapToCustomerBasketResponse(CustomerBasket customerBasket)
     {

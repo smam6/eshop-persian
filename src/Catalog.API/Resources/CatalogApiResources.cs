@@ -8,4 +8,6 @@ namespace Catalog.API.Resources;
 /// </summary>
 public sealed class CatalogApiResources
 {
+    public const string ItemIdRequired = nameof(ItemIdRequired);
+    public const string ItemNotFound = nameof(ItemNotFound);
 }

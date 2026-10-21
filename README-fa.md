@@ -91,7 +91,37 @@ WebApp/HybridApp/ClientApp/WebhookClient، لایهٔ مشترک WebAppComponent
 - Bootstrap نسخهٔ LTR است و لایهٔ RTL به‌صورت فایل کمکی `rtl-fa.css` نوشته شده.
 - ارقام فارسی فقط در لایهٔ نمایش است؛ ورودی‌های عددی/متنی لاتین می‌مانند تا
   parsing مرورگر نشکند.
-- صفحات اشکال‌زدای Identity (Diagnostics/Grants) و رشته‌های لاگ انگلیسی‌اند.
+- رشته‌های لاگ (Logging) عمداً انگلیسی مانده‌اند؛ معیار عملیات‌اند نه رابط کاربری.
+  صفحات اشکال‌زدای Identity (Diagnostics/Grants) ترجمه شده‌اند.
+
+## صحت‌سنجی build/test (وضعیت: ۱۴۰۵/۰۷/۲۹)
+
+تغییرات در محیطی بدون دسترسی به `dot.net`/`api.nuget.org` نوشته شدند، پس
+`dotnet build` و اجرای آزمون‌ها در همان محیط ممکن نشد. برای تأیید نهایی روی
+ماشین خودتان (دات‌نت ۱۰ + Docker):
+
+```bash
+./scripts/verify-persian-build.sh     # لاگ‌ها در .verify-logs/
+python3 tools/check-persian.py        # بررسی ساختاری سریع، بدون SDK
+```
+
+جزئیات در [docs/06-بسته-اعتبارسنجی-محلی.md](docs/06-بسته-اعتبارسنجی-محلی.md).
+
+## پیام‌های خطای سرویس‌ها و فرم‌ها
+
+- **Basket.API (gRPC):** `Resources/BasketApiResources.{resx,fa-IR.resx}`؛
+  پیام‌های `RpcException` در `BasketService` با `IStringLocalizer` ساخته
+  می‌شوند؛ فرهنگ پیش‌فرض `fa-IR` و قابل برگشت به `en-US`.
+- **Ordering.API:** `OrderingApiResources` برای پیام‌های
+  `CreateOrder/CancelOrder/ShipOrder` (BadRequest/ProblemDetails)؛ همان
+  الگوی CatalogApi.
+- **فرم‌ها (DataAnnotations):** `[Required(ErrorMessageResourceType…)]` و
+  `[Display(ResourceType…)]` در `BasketCheckoutInfo` (WebApp) و
+  `LoginInputModel` (Identity) از `SharedResources` / `AccountResources`
+  می‌خوانند؛ `AddDataAnnotationsLocalization` با
+  `DataAnnotationLocalizerProvider` در هر سه نقطه سیم‌کشی شده است.
+- **آزمون‌ها:** `LocalizedApiMessagesTests` (MSTest، آفلاین) همین رفتار را
+  در فرهنگ‌های fa-IR و en-US پوشش می‌دهد.
 
 ---
 

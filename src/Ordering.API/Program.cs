@@ -1,8 +1,12 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+
+var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 builder.AddApplicationServices();
 builder.Services.AddProblemDetails();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 var withApiVersioning = builder.Services.AddApiVersioning(options =>
 {
@@ -15,6 +19,14 @@ builder.AddDefaultOpenApi(withApiVersioning);
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
+
+var supportedCultures = new[] { new CultureInfo("fa-IR"), new CultureInfo("en-US") };
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("fa-IR"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
 
 var orders = app.NewVersionedApi("Orders");
 

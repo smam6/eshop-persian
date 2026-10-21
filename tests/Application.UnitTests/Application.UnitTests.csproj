@@ -26,6 +26,9 @@
     <ProjectReference Include="..\..\src\PaymentProcessor\PaymentProcessor.csproj" />
     <ProjectReference Include="..\..\src\WebhookClient\WebhookClient.csproj" />
     <ProjectReference Include="..\..\src\Webhooks.API\Webhooks.API.csproj" />
+    <ProjectReference Include="..\..\src\Basket.API\Basket.API.csproj" />
+    <ProjectReference Include="..\..\src\Ordering.API\Ordering.API.csproj" />
+    <ProjectReference Include="..\..\src\WebApp\WebApp.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.Extensions.Localization;
+using eShop.Ordering.API.Resources;
 using CardType = eShop.Ordering.API.Application.Queries.CardType;
 using Order = eShop.Ordering.API.Application.Queries.Order;
 
@@ -22,11 +24,12 @@ public static class OrdersApi
     public static async Task<Results<Ok, BadRequest<string>, ProblemHttpResult>> CancelOrderAsync(
         [FromHeader(Name = "x-requestid")] Guid requestId,
         CancelOrderCommand command,
-        [AsParameters] OrderServices services)
+        [AsParameters] OrderServices services,
+        IStringLocalizer<OrderingApiResources> localizer)
     {
         if (requestId == Guid.Empty)
         {
-            return TypedResults.BadRequest("Empty GUID is not valid for request ID");
+            return TypedResults.BadRequest(localizer[nameof(OrderingApiResources.RequestIdEmpty)]);
         }
 
         var requestCancelOrder = new IdentifiedCommand<CancelOrderCommand, bool>(command, requestId);
@@ -42,7 +45,7 @@ public static class OrdersApi
 
         if (!commandResult)
         {
-            return TypedResults.Problem(detail: "Cancel order failed to process.", statusCode: 500);
+            return TypedResults.Problem(detail: localizer[nameof(OrderingApiResources.CancelFailed)], statusCode: 500);
         }
 
         return TypedResults.Ok();
@@ -51,11 +54,12 @@ public static class OrdersApi
     public static async Task<Results<Ok, BadRequest<string>, ProblemHttpResult>> ShipOrderAsync(
         [FromHeader(Name = "x-requestid")] Guid requestId,
         ShipOrderCommand command,
-        [AsParameters] OrderServices services)
+        [AsParameters] OrderServices services,
+        IStringLocalizer<OrderingApiResources> localizer)
     {
         if (requestId == Guid.Empty)
         {
-            return TypedResults.BadRequest("Empty GUID is not valid for request ID");
+            return TypedResults.BadRequest(localizer[nameof(OrderingApiResources.RequestIdEmpty)]);
         }
 
         var requestShipOrder = new IdentifiedCommand<ShipOrderCommand, bool>(command, requestId);
@@ -71,7 +75,7 @@ public static class OrdersApi
 
         if (!commandResult)
         {
-            return TypedResults.Problem(detail: "Ship order failed to process.", statusCode: 500);
+            return TypedResults.Problem(detail: localizer[nameof(OrderingApiResources.ShipFailed)], statusCode: 500);
         }
 
         return TypedResults.Ok();
@@ -118,7 +122,8 @@ public static class OrdersApi
     public static async Task<Results<Ok, BadRequest<string>>> CreateOrderAsync(
         [FromHeader(Name = "x-requestid")] Guid requestId,
         CreateOrderRequest request,
-        [AsParameters] OrderServices services)
+        [AsParameters] OrderServices services,
+        IStringLocalizer<OrderingApiResources> localizer)
     {
         
         //mask the credit card number
@@ -132,7 +137,7 @@ public static class OrdersApi
         if (requestId == Guid.Empty)
         {
             services.Logger.LogWarning("Invalid IntegrationEvent - RequestId is missing - {@IntegrationEvent}", request);
-            return TypedResults.BadRequest("RequestId is missing.");
+            return TypedResults.BadRequest(localizer[nameof(OrderingApiResources.RequestIdMissing)]);
         }
 
         using (services.Logger.BeginScope(new List<KeyValuePair<string, object>> { new("IdentifiedCommandId", requestId) }))

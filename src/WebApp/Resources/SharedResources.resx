@@ -188,4 +188,14 @@
   <data name="Cart_AriaCount" xml:space="preserve"><value>Shopping bag, {0} item(s)</value></data>
   <data name="Cart_SummaryHeader" xml:space="preserve"><value>Your shopping bag</value></data>
   <data name="Item_NotFoundHint" xml:space="preserve"><value>Sorry, we couldn't find any such product.</value></data>
+  <data name="Validation_StreetRequired" xml:space="preserve"><value>Street is required.</value></data>
+  <data name="Validation_CityRequired" xml:space="preserve"><value>City is required.</value></data>
+  <data name="Validation_StateRequired" xml:space="preserve"><value>State is required.</value></data>
+  <data name="Validation_CountryRequired" xml:space="preserve"><value>Country is required.</value></data>
+  <data name="Validation_ZipCodeRequired" xml:space="preserve"><value>ZipCode is required.</value></data>
+  <data name="Label_Street" xml:space="preserve"><value>Street</value></data>
+  <data name="Label_City" xml:space="preserve"><value>City</value></data>
+  <data name="Label_State" xml:space="preserve"><value>State</value></data>
+  <data name="Label_Country" xml:space="preserve"><value>Country</value></data>
+  <data name="Label_ZipCode" xml:space="preserve"><value>ZipCode</value></data>
 </root>

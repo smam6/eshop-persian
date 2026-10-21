@@ -1,8 +1,12 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddDataAnnotationsLocalization(options =>
+{
+    options.DataAnnotationLocalizerProvider = (type, factory) =>
+        factory.Create(typeof(Identity.API.Resources.AccountResources));
+});
 
 builder.AddNpgsqlDbContext<ApplicationDbContext>("identitydb");
 
